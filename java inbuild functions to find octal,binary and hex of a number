@@ -1,0 +1,17 @@
+package arrays;
+import java.util.Scanner;
+public class ternary_operator {
+	public static void main(String args[])
+	{
+		Scanner scanner=new Scanner(System.in);
+		int num=35;
+		String s=Integer.toOctalString(num);
+		System.out.println(s);
+		String s1=Integer.toBinaryString(num);
+		System.out.println(s1);
+		String s2=Integer.toHexString(num);
+		System.out.println(s2);
+		
+		scanner.close();
+	}
+}
