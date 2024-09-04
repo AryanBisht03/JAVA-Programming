@@ -1,0 +1,28 @@
+package arrays;
+import java.util.Scanner;
+public class continue_statement {
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	//the task is to enter 5 positive numbers from the user, with the help of continue statement.
+	int arr[];
+	arr=new int[5];
+	System.out.println("Enter the elements");
+	for(int i=0;i<5;i++)
+	{
+		int num=scanner.nextInt();
+		if(num<=0)
+		{
+			System.out.println("Negative or zero number, skipping");
+			continue;
+		}
+		arr[i]=num;
+	}
+	for(int num:arr)
+	{
+		if(num!=0)
+		System.out.print(num+" ");
+	}
+	scanner.close();
+}
+}
