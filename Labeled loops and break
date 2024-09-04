@@ -1,0 +1,21 @@
+package arrays;
+import java.util.Scanner;
+public class labeled_loop {
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	outer_loop:for(int i=0;i<5;i++)
+	{
+		inner_loop:for(int j=0;j<5;j++)
+		{
+			most_innerloop:for(int k=0;k<4;k++)
+			{
+				if(i==2 && j==2 && k==2)
+					break outer_loop;
+				System.out.println(i+" "+j+" "+k);
+			}
+		}
+	}
+	scanner.close();
+}
+}
