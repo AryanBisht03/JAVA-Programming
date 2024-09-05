@@ -1,0 +1,52 @@
+package arrays;
+import java.util.Scanner;
+class Aryan
+{
+	private int acc_num;
+	private double balance;
+	private String name;
+	final static int rate=8;
+	public Aryan()
+	{
+		System.out.println("I am inside the default constructor");
+	}
+	
+	public void set_acc_num(int num)
+	{
+		this.acc_num=num;
+	}
+	public void set_balance(double num)
+	{
+		this.balance=num;
+	}
+	public void set_name(String name)
+	{
+		this.name=name;
+	}
+	public int get_acc_num()
+	{
+		return acc_num;
+	}
+	public double get_balance()
+	{
+		return balance;
+	}
+	public String get_name()
+	{
+		return name;
+	}
+	public static int rates()
+	{
+		return rate;
+	}
+	
+}
+public class default_constructor {
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	Aryan a1=new Aryan();
+	
+	scanner.close();
+}
+}
