@@ -1,0 +1,65 @@
+package arrays;
+import java.util.Scanner;
+class Aryan
+{
+	private int acc_num;
+	private double balance;
+	private String name;
+	final static int rate=8;
+	
+	public Aryan()
+	{
+		System.out.println("I am inside the default constructor");
+	}
+	
+	public Aryan(int num,double balance,String name)
+	{
+		this.acc_num=num;
+		this.balance=balance;
+		this.name=name;
+	}
+	
+	public void set_acc_num(int num)
+	{
+		this.acc_num=num;
+	}
+	public void set_balance(double num)
+	{
+		this.balance=num;
+	}
+	public void set_name(String name)
+	{
+		this.name=name;
+	}
+	public int get_acc_num()
+	{
+		return acc_num;
+	}
+	public double get_balance()
+	{
+		return balance;
+	}
+	public String get_name()
+	{
+		return name;
+	}
+	public static int rates()
+	{
+		return rate;
+	}
+	
+}
+public class default_constructor {
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	Aryan a1=new Aryan(1234,13.34,"Aryan Bisht");
+	System.out.println(a1.get_acc_num());
+	System.out.println(a1.get_balance());
+	System.out.println(a1.get_name());
+	System.out.println(a1.rates());
+	
+
+	scanner.close();
+}
+}
