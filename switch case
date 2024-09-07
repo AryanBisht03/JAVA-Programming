@@ -1,0 +1,231 @@
+package arrays;
+import java.util.Scanner;
+class Bytes_code()
+{
+	System.out.println("1. Water");
+	System.out.println("2. Orange");
+	System.out.println("3. Fanta");
+	System.out.println("4. Coke");
+	System.out.println("5. Pepsi");
+	System.out.println("6. Sprite");
+	
+	System.out.println("Enter the CAN");
+	byte choice=scanner.nextByte();
+	switch(choice)
+	{
+	case 1:
+		System.out.println("The water cost $12");
+		break;
+	case 2:
+		System.out.println("The Orange cost $13");
+		break;
+	case 3:
+		System.out.println("The Fanta cost $14");
+		break;
+	case 4:
+		System.out.println("The Coke cost $115");
+		break;
+	case 5:
+		System.out.println("The Pepsi cost $16");
+		break;
+	case 6:
+		System.out.println("The Sprite cost $12");
+		break;
+	
+	default:
+		System.out.println("Invalid input");
+}
+
+class Short_code()
+{
+	System.out.println("1. Blue");
+	System.out.println("2. Orange");
+	System.out.println("3. Pink");
+	System.out.println("4. Black");
+	System.out.println("5. Brown");
+	System.out.println("6. Green");
+	
+	System.out.println("Enter the choice");
+	short choice=scanner.nextShort();
+	switch(choice)
+	{
+	case 1:
+		System.out.println("Blue signifies sky");
+		break;
+	case 2:
+		System.out.println("Orange signifies Sanatan");
+		break;
+	case 3:
+		System.out.println("Pink signifies Salt");
+		break;
+	case 4:
+		System.out.println("Black signifies negativity");
+		break;
+	case 5:
+		System.out.println("Brown signifies indians");
+		break;
+	case 6:
+		System.out.println("Green signifies wheat");
+		break;
+	
+	default:
+		System.out.println("Invalid input");
+}
+
+	class Int_code()
+	{
+		System.out.println("1. Gold");
+		System.out.println("2. Silver");
+		System.out.println("3. Platinum");
+		System.out.println("Enter the choice");
+		int choice=scanner.nextInt();
+		switch(choice)
+		{
+		case 1:
+			System.out.println("Gold having 10% discount");
+			break;
+		case 2:
+			System.out.println("Silver having 20% discount");
+			break;
+		case 3:
+			System.out.println("Platinum having 25% discount");
+			break;
+		
+		default:
+			System.out.println("Invalid input");
+	}
+		
+		class Long_code()
+		{
+			System.out.println("Enter your age");
+			long choice=scanner.nextLong();
+			switch(choice)
+			{
+			case 1:
+			case 2:
+			case 3:
+				
+				System.out.println("Kindergarden");
+				break;
+			case 4:
+			case 5:
+			case 6:
+				
+				System.out.println("The journey starts");
+				break;
+			case 7:
+			case 8:
+			case 9:
+			case 10:
+				System.out.println("Growing like a beam of light");
+				break;
+			
+			default:
+				System.out.println("Invalid input");
+		}
+			
+			class Char_code()
+			{
+				System.out.println("1. A");
+				System.out.println("2. B");
+				System.out.println("3. C");
+				System.out.println("4. D");
+				System.out.println("5. E");
+				System.out.println("6. F");
+				
+				System.out.println("Enter the Grade");
+				char choice=scanner.next().charAt(0);
+				switch(choice)
+				{
+				case 'A':
+					System.out.println("Excellent");
+					break;
+				case 'B':
+					System.out.println("Best");
+					break;
+				case 'C':
+					System.out.println("Better");
+					break;
+				case 'D':
+					System.out.println("Good");
+					break;
+				case 'E':
+					System.out.println("Slightly bad");
+					break;
+				case 'F':
+					System.out.println("Bad");
+					break;
+				
+				default:
+					System.out.println("Invalid input");
+			}
+				
+				
+				class String_code()
+				{
+					System.out.println("1. Sales");
+					System.out.println("2. Operations");
+					System.out.println("3. Developers");
+					System.out.println("4. Testers");
+					
+					System.out.println("Enter the department name");
+					String choice=scanner.nextLine().toLowerCase();
+					switch(choice)
+					{
+					case 'sales':
+						System.out.println("Sales department is connecting with you in a second");
+						break;
+					case 'operations':
+						System.out.println("operation department is connecting with you in a second");
+						break;
+					case 'devlopers':
+						System.out.println("devlopers department is connecting with you in a second");
+						break;
+					case 'testers':
+						System.out.println("testers department is connecting with you in a second");
+						break;
+					
+					default:
+						System.out.println("Invalid input");
+				}
+			
+	
+public class switch_case {
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	System.out.println("Enter the switch type");
+	byte n=scanner.nextByte();
+	System.out.println("1. BYTE");
+	System.out.println("2. SHORT");
+	System.out.println("3. INT");
+	System.out.println("4. LONG");
+	System.out.println("5. CHAR");
+	System.out.println("6. STRING");
+	switch(n)
+	{
+	case 1:
+		Byte_code();
+		break;
+	case 2:
+		Short_code();
+		break;
+	case 3:
+		Int_code();
+		break;
+	case 4:
+		Long_code();
+		break;
+	case 5:
+		Char_code();
+		break;
+	case 6:
+		String_code();
+		break;
+	default:
+		System.out.println("Invalid input");
+	}
+	
+	scanner.close();
+}
+}
