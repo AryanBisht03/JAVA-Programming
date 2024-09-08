@@ -1,0 +1,68 @@
+/*1)create a class "Shape" with 2 attributes, "width" and "height". Make sure one can not access these attributes directly.
+provide accessor methods on these attributes and allow them to call from outside of your class.*/
+
+package assignment_2;
+import java.lang.*;
+import java.util.Scanner;
+class Shape{
+	public Shape()
+	{
+		System.out.println("I am in default constructor");
+	}
+	private double width;
+	private double height;
+	public Shape(double width,double height)
+	{
+		System.out.println("I am in parameterized constructor");
+		this.height=height;
+		this.width=width;
+	}
+	
+	public void set_width(double width)
+	{
+		if(width>0)
+		{
+			this.width=width;
+		}
+		else
+			System.out.println("Width should be positive");
+	}
+	
+	
+	public double get_width()
+	{
+		return width;
+	}
+	
+	
+	public void set_height(double height)
+	{
+		if(height>0)
+		{
+			this.height=height;
+		}
+		else
+			System.out.println("height should be positive");
+	}
+	
+	
+	public double get_height()
+	{
+		return height;
+	}
+	
+}
+public class assignment {
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	Shape s1=new Shape(12,23);
+	System.out.println(s1.get_height());
+	s1.set_height(12);
+	s1.set_width(45);
+	System.out.println(s1.get_height());
+	System.out.println(s1.get_width());
+	
+	scanner.close();
+}
+}
