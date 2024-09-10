@@ -1,0 +1,28 @@
+/*4) Define a class "DemoOb". 
+create an instance of it.
+now create a reference and assign the reference created in the above statement.
+	Discuss what happens?
+Now since u have 2 references, take one of the reference and assign a new instance of the class.
+	Discuss what happens?
+(For ur discussion, write necessary comments in the program)
+*/
+
+package assignment_2;
+import java.lang.*;
+import java.util.Scanner;
+class DemoOb{
+	public DemoOb()
+	{
+		System.out.println("I am the default constructor , everytime someone make an object , i will be there");
+	}
+}
+public class question_4 {
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	DemoOb ob1=new DemoOb();
+	DemoOb ob2=ob1;
+	ob1=new DemoOb();
+	scanner.close();
+}
+}
