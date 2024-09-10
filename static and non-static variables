@@ -1,0 +1,89 @@
+/*5) Define 3 classes A , B and C
+in all these classes create static and nonstatic variables as well as methods.
+	Now Define a class "Demo" ,in which define "main" function. From this main function try to access all the members of A ,B  and C.
+*/
+package assignment_2;
+import java.lang.*;
+import java.util.Scanner;
+
+class A{
+	//static variables
+	static int a;
+	public static void Value()
+	{
+		System.out.println("The static variable a is "+a);
+	}
+	
+	//non-static variables
+	int b;
+	public void value()
+	{
+		System.out.println("The value of non static b is "+b);
+	}
+}
+
+class B{
+	//static variables
+		static int a;
+		public static void Value()
+		{
+			System.out.println("The static variable a is "+a);
+		}
+		
+		//non-static variables
+		int b;
+		public void value()
+		{
+			System.out.println("The value of non static b is "+b);
+		}
+}
+
+class C{
+	//static variables
+		static int a;
+		public static void Value()
+		{
+			System.out.println("The static variable a is "+a);
+		}
+		
+		//non-static variables
+		int b;
+		public void value()
+		{
+			System.out.println("The value of non static b is "+b);
+		}
+}
+
+public class question5 {
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	//accessing static variables of class A
+	System.out.println("Static variables and members");
+	A.a=11;
+	A.Value();
+	//accessing static variables of class B
+	B.a=22;
+	B.Value();
+	//accessing static variables of class C
+	C.a=33;
+	C.Value();
+	
+	//To access non-static variables of a class we have to make an object
+	//accessing non-static variables of class A
+	System.out.println("Non-Static variables and members");
+	A obj1=new A();
+	obj1.b=44;
+	obj1.value();
+	//accessing non-static variables of class B
+	B obj2=new B();
+	obj2.b=55;
+	obj2.value();
+	//accessing non-static variables of class B
+	C obj3=new C();
+	obj3.b=66;
+    obj3.value();
+		
+	scanner.close();
+}
+}
