@@ -1,0 +1,29 @@
+/*3) Define a class "Emp" with private static member "int cnt".
+How will u make sure that outsiders can read the value of cnt ?*/
+package assignment_2;
+import java.util.Scanner;
+import java.lang.*;
+
+class Emp{
+	private static int cnt=0;
+	public Emp()
+	{
+		cnt++;
+	}
+	public int get_count()
+	{
+		return cnt;
+	}
+}
+public class question3 {
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	Emp emp1=new Emp();
+	Emp emp2=new Emp();
+	Emp emp3=new Emp();
+	
+	System.out.println(emp1.get_count());
+	scanner.close();
+}
+}
