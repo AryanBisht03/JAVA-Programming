@@ -1,0 +1,28 @@
+package arrays_from_beginning;
+import java.util.Scanner;
+class A
+{
+	int a=12;
+	void display()
+	{
+		System.out.println("Parent overridden");
+	}
+}
+
+class B extends A
+{
+	int a=12;
+    void display()
+    {
+    	System.out.println("Child overriding");
+    }
+}
+public class inhertance_with_overriding {
+public static void main(String args[])
+{
+	Scanner sc=new Scanner(System.in);
+	B ob=new B();
+	ob.display();
+	sc.close();
+}
+}
