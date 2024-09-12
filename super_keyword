@@ -1,0 +1,42 @@
+package arrays_from_beginning;
+import java.lang.*;
+import java.util.Scanner;
+
+class A
+{
+	int a=12;
+	public A(int a)
+	{
+		this.a=a;
+		System.out.println("I am inside parent parameterized constructor");
+	}
+	void display1()
+	{
+		System.out.println("The value of a is "+a);
+	}
+}
+
+class B extends A
+{
+	int b=34;
+	public B()
+	{
+		super(100);
+		System.out.println("I am under constructor of B");
+	}
+	void display2()
+	{
+		System.out.println("The value of b is "+b);
+	}
+}
+
+public class super_keyword {
+public static void main(String args[])
+{
+	Scanner sc=new Scanner(System.in);
+	B obj=new B();
+	obj.display1();
+	obj.display2();
+	sc.close();
+}
+}
