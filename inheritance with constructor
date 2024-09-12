@@ -1,0 +1,42 @@
+package arrays_from_beginning;
+import java.lang.*;
+import java.util.Scanner;
+class A
+{
+	int a=12;
+	public void display1()
+	{
+		System.out.println("The value of a is "+a);
+	}
+public A()
+{
+	System.out.println("I am in constructor of parent class");
+}
+
+}
+
+class B extends A
+{
+	int b=34;
+	public void display2()
+	{
+		System.out.println("The value of b is "+b);
+	}
+
+  public B()
+  {
+	  System.out.println("I am in child constructor");
+  }
+}
+
+
+public class inheritance_with_constructor {
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	B ob=new B();
+	ob.display1();
+	ob.display2();
+	scanner.close();
+}
+}
