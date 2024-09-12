@@ -1,0 +1,29 @@
+package arrays_from_beginning;
+import java.util.Scanner;
+import java.lang.*;
+public class inheritance {
+class A{
+	private int a=17;
+	public void display1()
+	{
+		System.out.println("The value of a is "+a);
+	}
+}
+class B extends A{
+	private int b=18;
+	public void display2()
+	{
+		System.out.println("The value of b is "+b);
+	}
+}
+	
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	A ob1=new A();
+	B ob2=new B();
+	ob1.display1();
+	ob2.display2();
+	scanner.close();
+}
+}
