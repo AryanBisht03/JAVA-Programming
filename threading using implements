@@ -1,0 +1,58 @@
+package Threads;
+import java.lang.*;
+import java.util.Scanner;
+
+
+class Runner implements Runnable
+{
+	public void run()
+	{
+		for(int i=1;i<=5;i++)
+		{
+			System.out.println("I am running");
+			try
+			{
+				Thread.sleep(500);
+			}
+			catch(InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+		}
+	}
+}
+
+class Cycler implements Runnable
+{
+	public void run()
+	{
+		for(int i=1;i<=5;i++)
+		{
+			System.out.println("I am doing cycleing");
+			try
+			{
+				Thread.sleep(500);
+			}
+			catch(InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+		}
+	}
+}
+
+public class running_and_cycling {
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	Runnable runningtask=new Runner();
+	Runnable cycletask=new Cycler();
+	
+	Thread runnerthread=new Thread(runningtask);
+	Thread cyclethread=new Thread(cycletask);
+	
+	runnerthread.start();
+	cyclethread.start();
+	scanner.close();
+}
+}
