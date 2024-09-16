@@ -1,0 +1,562 @@
+/*1)	Define 2 classes “First” and “Second” with member variables , member functions and constructors of  your choice.
+Now define a class “Two” in which define main function .
+In main function create various instances of First and Second  and call their individual member functions.
+*/
+
+/*2)	Create a class with static and non-static member variables.
+Define static and non-static member functions.
+Create instance of this class and call both static and non-static member functions.*/
+
+/*3)	Define a class “Check” in which declare member variables using  different accessibility modifiers
+i.e.  <default>, private ,public and protected. 
+Define a function “disp”  which should be public.  Define a class “CheckDemo” in which you will write “main()” function. 
+Create an instance of  the class “Check” and  show how many  variables can be accessed directly and how many indirectly.*/
+
+//4)	Show the example of single level inheritance with constructor invocation
+//5)	Show the example of multi-level inheritance with constructor invocation.
+//6)	Show the example of hierarchical inheritance with constructor invocation.
+//7)	Define a parent and a child class . Now explain function overriding with Example.
+/*8.Define a parent class with one function. Define child class with the function having same name as of parent class function, 
+but having different argument.
+Create an instance of child class and call the functions.
+Make sure u have followed the concept of “function overloading “ in inheritance.
+*/
+
+/*9)	Define a class “Shape” with “draw()” function .
+Now derive  classes like “Circle”, “Polygon”,”Rectangle” etc. from “Shape” and override “draw()” function.
+Define a class “ShapeDemo” in which  write  main()  function.
+In the main function create a reference to Shape class referring to any of the sub class. 
+Using this reference, call “draw()” and check the result.
+*/
+/*10)	Define an interface “Vechicle” with “start()” function . 
+Now derive  classes like “TwoWheeler”, “ThreeWheeler”,”FourWheeler” etc. from “Vehicle” and override “start()” function.
+Define a class “VDemo” in which  write  main()  function. In the main
+function create a reference to Vehicle  class referring to any of the sub class. Using this reference, call “start" method.
+*/
+package all_assignment;
+import java.lang.*;
+import java.util.Scanner;
+
+interface Vehicle
+{
+	void start();
+}
+
+class TwoWheeler implements Vehicle
+{
+	public TwoWheeler()
+	{
+		System.out.println("I am TwoWheeler constructor");
+	}
+	public void start()
+	{
+		System.out.println("TwoWheeler is making");
+	}
+}
+
+class ThreeWheeler implements Vehicle
+{
+	public ThreeWheeler()
+	{
+		System.out.println("I am ThreeWheeler constructor");
+	}
+	public void start()
+	{
+		System.out.println("ThreeWheeler is making");
+	}
+}
+
+class FourWheeler implements Vehicle
+{
+	public FourWheeler()
+	{
+		System.out.println("I am FourWheeler constructor");
+	}
+	public void start()
+	{
+		System.out.println("FourWheeler is making");
+	}
+}
+
+class FiveWheeler implements Vehicle
+{
+	public FiveWheeler()
+	{
+		System.out.println("I am FiveWheeler constructor");
+	}
+	public void start()
+	{
+		System.out.println("FiveWheeler is making");
+	}
+}
+
+class Shape
+{
+	public Shape()
+	{
+		System.out.println("I am shape constructor");
+	}
+	public void draw()
+	{
+		System.out.println("Drawing is going onnnnn");
+	}
+}
+
+class Circle extends Shape
+{
+	public Circle()
+	{
+		System.out.println("I am circle constructor");
+	}
+	public void draw()
+	{
+		System.out.println("Drawing circle");
+	}
+}
+class Polygon extends Shape
+{
+	public Polygon()
+	{
+		System.out.println("I am Polygon constructor");
+	}
+	public void draw()
+	{
+		System.out.println("Drawing polygon");
+	}
+}
+class Rectangle extends Shape
+{
+	public Rectangle()
+	{
+		System.out.println("I am Polygon constructor");
+	}
+	public void draw()
+	{
+		System.out.println("Drawing Rectangle");
+	}
+}
+
+class Square  extends Shape
+{
+	public Square()
+	{
+		System.out.println("I am Polygon constructor");
+	}
+	public void draw()
+	{
+		System.out.println("Drawing Square");
+	}
+}
+
+class Parent
+{
+	int a=12;
+	int b=23;
+	public Parent()
+	{
+		System.out.println("Hy I am parent constructor");
+	}
+	public int add(int a,int b)
+	{
+		int c=a+b;
+		return c;
+	}
+}
+class Child extends Parent
+{
+	int a=12;
+	int b=23;
+	int c=34;
+	public Child()
+	{
+		System.out.println("Hy I am child constructor");
+	}
+	public int add(int a,int b,int c)
+	{
+		int d=a+b+c;
+		return d;
+	}
+}
+
+class Parent1
+{
+	public Parent1()
+	{
+		System.out.println("I am the parent constructor");
+	}
+	public void great()
+	{
+		System.out.println("Hy i am overridden");
+	}
+}
+
+class Child1 extends Parent1
+{
+	public Child1()
+	{
+		System.out.println("I am the child constructor");
+	}
+	public void great()
+	{
+		System.out.println("Hy im overriding the parent function");
+	}
+}
+
+
+class Heirarchical_inheritance_parent
+{
+	public Heirarchical_inheritance_parent()
+	{
+		System.out.println("I am the parent class");
+	}
+	public void get()
+	{
+		System.out.println("I am the parent class");
+	}
+}
+
+class Heirarchical_inheritance_child1 extends Heirarchical_inheritance_parent
+{
+	public Heirarchical_inheritance_child1()
+	{
+		System.out.println("I am child 1");
+	}
+	public void get()
+	{
+		System.out.println("I am the first child");
+	}
+}
+
+class Heirarchical_inheritance_child2 extends Heirarchical_inheritance_parent
+{
+	public Heirarchical_inheritance_child2()
+	{
+		System.out.println("I am child 2");
+	}
+	public void get()
+	{
+		System.out.println("I am the second child");
+	}
+}
+
+class Heirarchical_inheritance_child3 extends Heirarchical_inheritance_parent
+{
+	public Heirarchical_inheritance_child3()
+	{
+		System.out.println("I am child 3");
+	}
+	public void get()
+	{
+		System.out.println("I am the third child");
+	}
+}
+
+
+
+
+class multiple_inheritance_grand_parent
+{
+	public multiple_inheritance_grand_parent()
+	{
+		System.out.println("I am the grandparent");
+	}
+	public void grand()
+	{
+		System.out.println("I started the family and i am the boss");
+	}
+}
+
+class multiple_inheritance_parent_parent extends multiple_inheritance_grand_parent
+{
+	public multiple_inheritance_parent_parent()
+	{
+		System.out.println("I am the grandparent son");
+	}
+	public void grand()
+	{
+		System.out.println("I started the future family");
+	}
+}
+
+class multiple_inheritance_child_parent extends multiple_inheritance_parent_parent
+{
+	public multiple_inheritance_child_parent()
+	{
+		System.out.println("I am the grandchild");
+	}
+	public void grand()
+	{
+		System.out.println("I am the child and i will produce in future");
+	}
+}
+
+
+class Single_level_inheritance_parent_class
+{
+	public Single_level_inheritance_parent_class()
+	{
+		System.out.println("I am parent class default constructor");
+	}
+		
+	public void car_type()
+	{
+			System.out.println("I am a normal car");
+	}
+		
+	public void car_break()
+	{
+			System.out.println("I have a break");
+	}
+		
+}
+
+
+class Single_level_inheritance_child_class extends Single_level_inheritance_parent_class
+{
+	public Single_level_inheritance_child_class()
+	{
+		System.out.println("I am a child class constructor");
+	}
+	public void car_type()
+	{
+		System.out.println("I am a electric car");
+	}
+}
+
+class Check
+{
+	//private member
+	private String personal_room="Aryan Room";
+	private String personal_washroom="Aryan Washroom";
+	
+	//public member
+	public String park="Public park";
+	public String tv="Tv for all";
+	
+	//protected member
+	protected String dining_room="Only for family members";
+	protected String kitchen="Only for members of the family kitchen";
+	
+	//default member
+	int a=12;
+	int b=23;
+	int c=34;
+	
+	public void disp()
+	{
+		System.out.println("private member access is indirectly"+personal_room+" and "+personal_washroom);
+        System.out.println("public member are "+park+" and "+tv);
+        System.out.println("Protected members "+dining_room+" and "+kitchen);
+        System.out.println("default members "+a+" , "+b+" and "+c);
+	}
+}
+
+
+class Static_and_non_static
+{
+	static int rule_1;
+	static int rule_2;
+	static int rule_3;
+	static void rulebook()
+	{
+		System.out.println("I am a static block");
+		System.out.println("The value of rule_1 is "+rule_1);
+		System.out.println("The value of rule_2 is "+rule_2);
+		System.out.println("The value of rule_3 is "+rule_3);
+	}
+	
+	int a;
+	int b;
+	int c;
+	
+	void non_static_method()
+	{
+		System.out.println("The value of a is "+a);
+		System.out.println("The value of b is "+b);
+		System.out.println("The value of c is "+c);
+	}
+}
+
+class First
+{
+	private int a;
+	private int b;
+	private int c;
+	public First()
+	{
+		System.out.println("I am a default constructor of class First");
+	}
+	
+	public First(int a,int b)
+	{
+		System.out.println("I am under parameterized constructor of First");
+		this.a=a;
+		this.b=b;
+		c=this.a+this.b;
+		System.out.println("The sum of a and b of class First is "+c);
+	}
+	
+	public void setter(int a,int b)
+	{
+		this.a=a;
+		this.b=b;
+	}
+	
+	public int getter_a()
+	{
+		return a;
+	}
+	public int getter_b()
+	{
+		return b;
+	}
+}
+
+class Second
+{
+	private int a;
+	private int b;
+	private int c;
+	public Second()
+	{
+		System.out.println("I am a default constructor of class Second");
+	}
+	
+	public Second(int a,int b)
+	{
+		System.out.println("I am under parameterized constructor of First");
+		this.a=a;
+		this.b=b;
+		c=this.a+this.b;
+		System.out.println("The sum of a and b of class First is "+c);
+	}
+	
+	public void setter(int a,int b)
+	{
+		this.a=a;
+		this.b=b;
+	}
+	
+	public int getter_a()
+	{
+		return a;
+	}
+	public int getter_b()
+	{
+		return b;
+	}
+}
+
+
+public class assignment_4 {
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	Vehicle v1=new TwoWheeler();
+	v1.start();
+	Vehicle v2=new ThreeWheeler();
+	v2.start();
+	Vehicle v3=new FourWheeler();
+	v3.start();
+	Vehicle v4=new FiveWheeler();
+	v4.start();
+	
+	Shape sh=new Shape();
+	sh.draw();
+	Circle c=new Circle();
+	c.draw();
+	Polygon p=new Polygon();
+	p.draw();
+	Rectangle r=new Rectangle();
+	r.draw();
+	Square s=new Square();
+	s.draw();
+	System.out.println("OVERRIDING STARTS FROM HERE------------------");
+	Shape sc=new Circle();
+	sc.draw();
+	Shape sc1=new Polygon();
+	sc1.draw();
+	Shape sc2=new Rectangle();
+	sc2.draw();
+	Shape sc3=new Square();
+	sc3.draw();
+	
+	
+	Parent p=new Parent();
+	System.out.println("The sum is "+p.add(12, 12));
+	
+	Child ch=new Child();
+	System.out.println("The sum is "+ch.add(12, 12, 12));
+	
+	Parent pp=new Child();
+	System.out.println("The sum is "+pp.add(23, 23));
+	
+	Parent p=new Parent();
+	p.great();
+	Child ch=new Child();
+	ch.great();
+	Parent poly=new Child();
+	poly.great();
+	Heirarchical_inheritance_child1 child1=new Heirarchical_inheritance_child1();
+	Heirarchical_inheritance_child2 child2=new Heirarchical_inheritance_child2();
+	Heirarchical_inheritance_child3 child3=new Heirarchical_inheritance_child3();
+	child1.get();
+	child2.get();
+	child3.get();
+	
+	multiple_inheritance_child_parent obj1=new multiple_inheritance_child_parent();
+	obj1.grand();
+	Single_level_inheritance_child_class obj1=new Single_level_inheritance_child_class();
+	obj1.car_type();
+	obj1.car_break();
+	Check obj1=new Check();
+	System.out.println("direct access "+obj1.a);
+	System.out.println("direct access "+obj1.b);
+	System.out.println("direct access "+obj1.c);
+	System.out.println("direct access "+obj1.dining_room);
+	System.out.println("direct access "+obj1.kitchen);
+	System.out.println("direct access "+obj1.park);
+	System.out.println("direct access "+obj1.tv);
+	
+	obj1.disp();
+	
+	
+	calling and accessing the static block
+	Static_and_non_static.rule_1=12;
+	Static_and_non_static.rule_2=23;
+	Static_and_non_static.rule_3=34;
+	Static_and_non_static.rulebook();
+	
+	//calling and accessing the non-static block
+	Static_and_non_static obj1=new Static_and_non_static();
+	obj1.a=11;
+	obj1.b=22;
+	obj1.c=33;
+	obj1.non_static_method();
+	//creating another object
+	Static_and_non_static obj2=new Static_and_non_static();
+	obj2.a=44;
+	obj2.b=55;
+	obj2.c=66;
+	obj2.non_static_method();
+	
+	First obj1=new First();
+	Second obj2=new Second();
+	obj1.setter(12, 23);
+	System.out.println("The value of a is "+obj1.getter_a());
+	System.out.println("The value of b is "+obj1.getter_b());
+
+	obj1.setter(45, 56);
+	System.out.println("The value of a is "+obj1.getter_a());
+	System.out.println("The value of b is "+obj1.getter_b());
+	
+	First obj3=new First(666,777);
+	System.out.println("The value of a is "+obj3.getter_a());
+	System.out.println("The value of b is "+obj3.getter_b());
+	
+	Second obj4=new Second(888,999);
+	System.out.println("The value of a is "+obj4.getter_a());
+	System.out.println("The value of b is "+obj4.getter_b());
+	scanner.close();
+}
+}
