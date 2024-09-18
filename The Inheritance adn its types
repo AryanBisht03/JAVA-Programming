@@ -1,0 +1,426 @@
+/*1) Create a multi-level inheritance , instantiate the child class and 
+observe constructor invocation.
+Also show, if needed how will u invoke parent class constructor from child class ?
+*/
+/*2) create a class "Vehicle", define a method "public void start()" in it. 
+From this class derive a class FourWheeler.
+How will u override "start()" method of parent class ?
+*/
+/*3) Go for Hierarchical inheritance, 
+create instances of child class and observe constructor invocation.
+*/
+/*4) Create a class "Top1" with "disp1()" method.
+From this class Derive "Bottom1", "Bottom2" and "Bottom3" classes ,override the "disp1()".
+Now show how will u achieve dynamic polymorphism.
+*/
+/*5) create abstract class Shape. declare "draw()" function as abstract. From this class define "Triangle","Polygon" and "Circle" .
+create an array of Shape having 3 elements.
+store child objects into this array . and call
+their draw function.
+*/
+/*6) Define interface "A" with "disp1()" method.
+Derive from "A", interface "B" with "disp2" method.
+Derive class "C" , from "B".
+Instantiate class "C" and call its members as well as derived from parent interfaces.
+*/
+/*7) Define class "Parent1" with some data.
+Define interface "Parent2" with some methods.
+Derive a class "Child" from "Parent1" and "Parent2", instantiate it and call the members.
+*/
+/*8) Define a class "base1" with only parameterized constructor.
+Derive a class "sub1" from "base1". This class should have following constructors
+	a) Default
+	b) one parameter
+	c) two parameter
+Now try to instantiate "sub1" , using any of the above mentioned constructors.
+*/
+/*9) create interface "Game" , have an abstract method "play()". 
+from this interface implements classes like "Cricket" , "FootBall" and "Tennis".
+Now Define one more class 
+public class Demo with main function.
+In this class have a static method "perform" which will take interface reference as parameter.
+inside "perform()" see to it that any child object passed ,
+its "play()" method should be invoked. Call "perform()" method from main function.
+*/
+
+package all_assignment;
+import java.lang.*;
+import java.util.Scanner;
+
+interface Game
+{
+	public abstract void play();
+}
+
+class Demo 
+{
+	public static void perform(Game game)
+	{
+		game.play();
+	}
+}
+
+class Cricket implements Game
+{
+	public void play()
+	{
+		System.out.println("Play Cricket");
+	}
+}
+class Football implements Game
+{
+	public void play()
+	{
+		System.out.println("Play Football");
+	}
+}
+class Tennis implements Game
+{
+	public void play()
+	{
+		System.out.println("Play Tennis");
+	}
+}
+
+
+
+class Base1
+{
+	private int x;
+	private int y;
+	public Base1(int x)
+	{
+		System.out.println("I am parameterized constructor of Base1");
+		this.x=x;
+	}
+	public void disp()
+	{
+		System.out.println("The value of a is "+x);
+		System.out.println("The value of b is "+y);
+	}
+}
+class Sub1 extends Base1
+{
+	private int a;
+	private int b;
+	public Sub1()
+	{
+		super(0);
+		System.out.println("I am the default constructor of Sub1");
+	}
+	public Sub1(int a)
+	{
+		super(a);
+		this.a=a;
+	}
+	public Sub1(int a,int b)
+	{
+		super(a);
+		this.a=a;
+		this.b=b;
+	}
+	public void disp()
+	{
+		System.out.println("The value of a is "+a);
+		System.out.println("The value of b is "+b);
+	}
+}
+
+interface Parent22 
+{
+	public void disp1();
+}
+
+class Parent11 implements Parent22
+{
+	public void disp1()
+	{
+		System.out.println("This is parent diisp method");
+	}
+	public void disp2()
+	{
+		System.out.println("Hy I am parent11");
+	}
+}
+
+class Child11 extends Parent11
+{
+	public void disp1()
+	{
+		System.out.println("Helllooo");
+	}
+	public void disp2()
+	{
+		System.out.println("hyyyyyyy");
+	}
+	public void disp3()
+	{
+		System.out.println("byeeeeeeeeee");
+	}
+	
+}
+
+
+
+interface A1
+{
+	public void disp1();
+}
+
+interface B1 extends A1
+{
+	public void disp2();
+}
+
+class C implements B1
+{
+	public void disp1()
+	{
+		System.out.println("Hello I am Display 1");
+	}
+	public void disp2()
+	{
+		System.out.println("Hello I am Display 2");
+	}
+	public void disp3()
+	{
+		System.out.println("Hello I am Display 3");
+	}
+}
+
+abstract class Shape1
+{
+	public abstract void draw();
+}
+
+class Triangle1 extends Shape1
+{
+	public void draw()
+	{
+		System.out.println("This is draw method of triangle");
+	}
+}
+
+class Polygon1 extends Shape1
+{
+	public void draw()
+	{
+		System.out.println("This is draw method of Polygon");
+	}
+}
+
+class Circle1 extends Shape1
+{
+	public void draw()
+	{
+		System.out.println("This is draw method of Circle");
+	}
+}
+
+
+class Top1
+{
+	public Top1()
+	{
+		System.out.println("I am the constructor of TOP");
+	}
+	public void disp1()
+	{
+		System.out.println("This is a display method of class TOP");
+	}
+}
+
+class Bottom1 extends Top1
+{
+	public void disp1()
+	{
+		System.out.println("This is a display method of class Bottom1");
+	}
+}
+class Bottom2 extends Top1
+{
+	public void disp1()
+	{
+		System.out.println("This is a display method of class Bottom2");
+	}
+}
+class Bottom3 extends Top1
+{
+	public void disp1()
+	{
+		System.out.println("This is a display method of class Bottom3");
+	}
+}
+
+class Main_parent
+{
+	public Main_parent()
+	{
+		System.out.println("I am parent constructor");
+	}
+	public void start()
+	{
+		System.out.println("Hy parent");
+	}
+}
+class Main_parent_child1 extends Main_parent
+{
+	public Main_parent_child1()
+	{
+		System.out.println("I am child1 constructor");
+	}
+	public void start()
+	{
+		System.out.println("Hy child1");
+	}
+}
+class Main_parent_child2 extends Main_parent
+{
+	public Main_parent_child2()
+	{
+		System.out.println("I am child2 constructor");
+	}
+	public void start()
+	{
+		System.out.println("Hy child2");
+	}
+}
+class Main_parent_child3 extends Main_parent
+{
+	public Main_parent_child3()
+	{
+		System.out.println("I am child3 constructor");
+	}
+	public void start()
+	{
+		System.out.println("Hy child3");
+	}
+}
+class Main_parent_child4 extends Main_parent
+{
+	public Main_parent_child4()
+	{
+		System.out.println("I am child4 constructor");
+	}
+	public void start()
+	{
+		System.out.println("Hy child4");
+	}
+}
+
+
+class Vehicle2
+{
+	public Vehicle2()
+	{
+		System.out.println("I am a default constructor of Vehicle");
+	}
+	public void start()
+	{
+		System.out.println("Hy this is start method of Vehicle class the parent");
+	}
+}
+class FourWheeler2 extends Vehicle2
+{
+	public FourWheeler2()
+	{
+		System.out.println("I am a default constructor of FourWheeler");
+	}
+	
+	public void start()
+	{
+		System.out.println("Hy this is start method of FourWheeler");
+	}
+}
+class Parent2
+{
+	int a=12;
+	public Parent2()
+	{
+		System.out.println("I am Parent constructor");
+	}
+}
+
+class Child2 extends Parent2
+{
+	int b=13;
+	public Child2()
+	{
+//		super();
+		System.out.println("I am the child constructor");
+	}
+}
+
+class Child2_2 extends Child2
+{
+	int c;
+	public Child2_2()
+	{
+		System.out.println("I am the child child constructor");
+	}
+}
+
+
+public class assignment_5 {
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+//	Child2_2 ch=new Child2_2();
+//	ch.c=ch.a+ch.b;
+//	System.out.println("The sum of a and b is "+ch.c);
+//	Vehicle2 v1=new Vehicle2();
+//	v1.start();
+//	FourWheeler2 v2=new FourWheeler2();
+//	v2.start();
+//	System.out.println("Overriding started-------");
+//	Vehicle2 obj=new FourWheeler2();
+//	obj.start();
+//	Main_parent mp=new Main_parent();
+//	mp.start();
+//	Main_parent_child1 c1=new Main_parent_child1();
+//	c1.start();
+//	Main_parent_child2 c2=new Main_parent_child2();
+//	c2.start();
+//	Main_parent_child3 c3=new Main_parent_child3();
+//	c3.start();
+//	Main_parent_child4 c4=new Main_parent_child4();
+//	c4.start();
+//	Top1 t1=new Top1();
+//	t1.disp1();
+//	Top1 t2=new Bottom1();
+//	t2.disp1();
+//	Top1 t3=new Bottom2();
+//	t3.disp1();
+//	Top1 t4=new Bottom3();
+//	t4.disp1();
+//	Shape[] shapes=new Shape[3];
+//	shapes[0]=new Triangle1();
+//	Shapes[1]=new Polygon1();
+//	Shapes[2]=new Circle1();
+//	
+//	for(Shape shape:shapes)
+//		System.out.println(shape);
+//	C c=new C();
+//	c.disp1();
+//	c.disp2();
+//	c.disp3();
+//	Child11 ch=new Child11();
+//	ch.disp1();
+//	ch.disp2();
+//	ch.disp3();
+//	Sub1 s1=new Sub1();
+//	s1.disp();
+//	Sub1 s2=new Sub1(10);
+//	s2.disp();
+//	Sub1 s3=new Sub1(30,40);
+//	s3.disp();
+	Cricket c=new Cricket();
+	Tennis t=new Tennis();
+	Football f=new Football();
+	Demo.perform(c);
+	Demo.perform(t);
+	Demo.perform(f);
+	
+	scanner.close();
+}
+}
