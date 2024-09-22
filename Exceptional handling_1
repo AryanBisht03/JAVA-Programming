@@ -1,0 +1,25 @@
+package exceptional_handling;
+import java.lang.*;
+import java.util.*;
+public class sample {
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	System.out.println("Enter the number of candies you are having");
+	int candies=scanner.nextInt();
+	System.out.println("Enter the number of friends you are having?");
+	int friends=scanner.nextInt();
+	try
+	{
+		int number_of_candies_get_by_each=candies/friends;
+		System.out.println("The numebr of candies got by each friend is "+number_of_candies_get_by_each);
+	}
+	catch(ArithmeticException e)
+	{
+		System.out.println("You can not divide the number of candies by 0");
+	}
+	System.out.println("Hy the code continues because of exception handling");
+	System.out.println("Hy my name is Aryan and I am a software developer at google india");
+	scanner.close();
+}
+}
