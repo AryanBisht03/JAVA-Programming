@@ -1,0 +1,259 @@
+package all_assignment;
+import java.util.*;
+import java.Scanner.*;
+
+class A
+{
+	/*5) Define 3 classes A , B and C
+	in all these classes create static and nonstatic variables as well as methods.
+		Now Define a class "Demo" ,in which define "main" function. 
+		From this main function try to access all the members of A ,B  and C.*/
+	static int a=12;
+	int b=23;
+	static int c=34;
+	int d=45;
+	static
+	{
+		System.out.println("This is static initializer of class A");
+	}
+	 public static void method1()
+	 {
+		 System.out.println("This is a static block of class A");
+	 }
+	 public static void method2()
+	 {
+		 System.out.println("This is another  static block of class A");
+	 }
+	 public void method3()
+	 {
+		 System.out.println("This is non****** static block of class A");
+	 }
+	 public void method4()
+	 {
+		 System.out.println("This is another non***** static block of class A");
+	 }
+	 
+	 
+}
+class B
+{
+	static int a=121;
+	int b=231;
+	static int c=341;
+	int d=451;
+	static
+	{
+		System.out.println("This is static initializer of class B");
+	}
+	 public static void method1()
+	 {
+		 System.out.println("This is a static block of class B");
+	 }
+	 public static void method2()
+	 {
+		 System.out.println("This is another  static block of class B");
+	 }
+	 public void method3()
+	 {
+		 System.out.println("This is non****** static block of class B");
+	 }
+	 public void method4()
+	 {
+		 System.out.println("This is another non***** static block of class B");
+	 }
+}
+
+class CC
+{
+	static int a=1212;
+	int b=2312;
+	static int c=3412;
+	int d=4512;
+	static
+	{
+		System.out.println("This is static initializer of class C");
+	}
+	 public static void method1()
+	 {
+		 System.out.println("This is a static block of class C");
+	 }
+	 public static void method2()
+	 {
+		 System.out.println("This is another  static block of class C");
+	 }
+	 public void method3()
+	 {
+		 System.out.println("This is non****** static block of class C");
+	 }
+	 public void method4()
+	 {
+		 System.out.println("This is another non***** static block of class C");
+	 }
+}
+
+class question_1_shape
+{
+	/*1)create a class "Shape" with 2 attributes, "width" and "height". Make sure one can not access these attributes directly.
+	provide accessor methods on these attributes and allow them to call from outside of your class.	*/
+	private double width;
+	private double height;
+	public void setter(double a,double b)
+	{
+		width=a;
+		height=b;
+	}
+	public double getter_width()
+	{
+		return width;
+	}
+	public double getter_height()
+	{
+		return height;
+	}
+}
+
+class question_2_MyClass
+{
+//	2) Define a class "MyClass" and make sure clients can instantiate it , 
+//	a) without any argument
+//	b) with one int argument
+//	c) with two int arguments
+	int a;
+	int b;
+	int c;
+	public void without_any_arg()
+	{
+		System.out.println("You can access this function without passing any argument");
+	}
+	public void withone_any_arg(int a)
+	{
+		System.out.println("The value is "+a);
+	}
+	public void withtwo_any_arg(int a,int b)
+	{
+		System.out.println("The value of a and b is "+a+b);
+	}
+}
+
+class question_3_Emp
+{
+//	3) Define a class "Emp" with private static member "int cnt".
+//	How will u make sure that outsiders can read the value of cnt ?
+	private static int cnt;
+	// i will make sure that the outsiders will be able to see the cnt value by making a getter and setter methods.
+	public static void setter(int n)
+	{
+		cnt=n;
+	}
+	public static int getter()
+	{
+		return cnt;
+	}
+}
+
+class question_4_Demoob
+{
+//	4) Define a class "DemoOb". 
+//	create an instance of it.
+//	now create a reference and assign the reference created in the above statement.
+//		Discuss what happens?
+//	Now since u have 2 references, take one of the reference and assign a new instance of the class.
+//		Discuss what happens?
+//	(For ur discussion, write necessary comments in the program)
+ int a;
+ int b;
+ 
+//parameterized constructor
+ public question_4_Demoob(int a)
+ {
+   this.a=a;
+ }
+ 
+ //class method
+ public void printing()
+ {
+	 System.out.println("Helloo aryan");
+ }
+ 
+ //display function
+ public void display()
+ {
+	 System.out.println("The value is "+a);
+ }
+ 
+}
+
+public class day_2 {
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	
+////	question_3_Emp q1=new question_3_Emp();
+//	question_3_Emp.setter(23);
+//	System.out.println("The value is "+question_3_Emp.getter());
+//	question_2_MyClass q1=new question_2_MyClass();
+//	q1.without_any_arg();
+//	q1.withone_any_arg(23);
+//	q1.withtwo_any_arg(23, 12);
+	
+//	question_1_shape q1=new question_1_shape();
+//	q1.setter(12.23, 34.45);
+//	System.out.println("The value of height "+q1.getter_height());
+//	System.out.println("The value of height "+q1.getter_width());
+//	question_4_Demoob q=new question_4_Demoob();
+//	q.printing();
+//	question_4_Demoob q1=new question_4_Demoob(12);
+//	q1.printing();
+//	q1.display();
+//	question_4_Demoob q2=q1;
+//	q2.printing();
+//	q2.display();
+//	if(q1==q2)
+//		System.out.println("Hello");
+//	if(q1.equals(q2))
+//		System.out.println("Bye");
+	
+	//accessing the static variables of all classes
+	System.out.println("The static variable of class A is "+A.a);
+	System.out.println("The static variable of class A is "+A.c);
+	System.out.println();
+	System.out.println("The static variable of class B is "+B.a);
+	System.out.println("The static variable of class B is "+B.c);
+	System.out.println();
+	System.out.println("The static variable of class C is "+CC.a);
+	System.out.println("The static variable of class C is "+CC.c);
+	System.out.println();
+	//accessing the static methods of the all classes
+	A.method1();
+	A.method2();
+	System.out.println();
+	B.method1();
+	B.method2();
+	System.out.println();
+	CC.method1();
+	CC.method2();
+	System.out.println();
+	
+	//accessing the non-static variables of all classes
+	A ob=new A();
+	ob.method1();
+	ob.method2();
+	ob.method3();
+	ob.method4();
+	System.out.println();
+	B ob1=new B();
+	ob1.method1();
+	ob1.method2();
+	ob1.method3();
+	ob1.method4();
+	System.out.println();
+	CC ob2=new CC();
+	ob2.method1();
+	ob2.method2();
+	ob2.method3();
+	ob2.method4();
+	
+	
+	scanner.close();
+}
+}
