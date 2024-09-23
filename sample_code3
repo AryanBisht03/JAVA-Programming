@@ -1,0 +1,129 @@
+//1) accept marks from user. if marks are
+//	> 75  display "Distinction"
+//	> =60 and < =75 display "first class"
+//	> =45 and < 60 display "second class"
+//	>=35 and < 45 display "pass class"
+//	<35 display "fail"
+//
+//2) accept a number and display whether it is divisible by 7 or not.
+//
+//3) accept a character and display (using if.. else ) whether it is vowel or not.
+//
+//4) accept 2 numbers and a character as operator ( + , - ,* , / , % ). Perform arithmetic according to the character entered.
+//
+//
+//
+//5) accept a number and display its table using 
+//	while
+//	do... while
+//	for
+//
+//
+//6) accept numbers and display as long as user does not enter 0.
+//
+//
+//
+//
+//7) accept a number and display whether it is even , odd or zero.
+//
+//
+//8) 
+//
+//9) create int array of 5 elements and accept 5 values inside it. Now accept one more number and check whether that number is there inside array or not.
+//
+//
+//10) accept 5 numbers in an array and display their sum.
+//
+//
+//11) 
+//
+//
+//12) accept 2 numbers and display whether
+//	a) first number is greater
+//	b) second number is greater
+//	c) both are equal
+//
+//
+//
+//
+//
+//13) accept 6 characters in an array and toggle them [ only if they are alphabets ]
+//
+//
+//
+//
+//14) display prime numbers from 2 to 20
+//
+//
+//15) accept a number and display whether it is prime or not.
+//
+//
+//
+//16) accept 3 digit number and display whether it is armstrong or not.
+//	[ A number is called as armstrong number if sum of cubes of digits of number is equal to the number itself ]
+
+
+package assignmt;
+import java.lang.*;
+import java.util.Scanner;
+import java.util.Arrays;
+
+class sorting
+{
+//	accept 5 numbers in an array and sort them in ascending order.
+    public void sorting_algo()
+    {
+    	Scanner scanner=new Scanner(System.in);
+    	System.out.println("Enter the number of elments you want in the array");
+    	int n;
+    	n=scanner.nextInt();
+    	int[] arr;
+    	arr=new int[n];
+    	System.out.println("Enter elements of the array");
+    	for(int i=0;i<n;i++)
+    	{
+    		arr[i]=scanner.nextInt();
+    	}
+    	Arrays.sort(arr);
+    	System.out.println("Array after sorting");
+    	for(int i=0;i<n;i++)
+    	{
+    		System.out.println(arr[i]);
+    	}
+    }
+}
+
+class even_odd
+{
+	Scanner scanner=new Scanner(System.in);
+//	create int array of 5 elements and accept 5 values inside it. Now display all the numbers of array.
+	public void function1()
+	{
+		int[] arr;
+	    System.out.println("Enter the number of elelemnts you want in your arrray");
+		int n=scanner.nextInt();
+	    arr=new int[n];
+		for(int i=0;i<n;i++)
+		{
+			arr[i]=scanner.nextInt();
+		}
+	    System.out.println("The elements are ");
+	    for(int i=0;i<n;i++)
+	    {
+	    	System.out.println(arr[i]);
+	    }
+	}
+}
+
+public class assignment3 {
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+//    even_odd q1=new even_odd();
+//    q1.function1();
+	sorting s1=new sorting();
+	s1.sorting_algo();
+	scanner.close();
+}
+
+}
