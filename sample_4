@@ -1,0 +1,318 @@
+package all_assignment;
+import java.lang.*;
+import java.util.*;
+
+class Vehicle
+{
+//	Define an interface “Vechicle” with “start()” function .
+//	Now derive  classes like “TwoWheeler”, “ThreeWheeler”,”FourWheeler” etc.
+//	from “Vehicle” and override “start()” function. Define a class “VDemo” in which  write  main()  function. 
+//	In the main function create a reference to Vehicle  class referring to any of the sub class. 
+//	Using this reference, call “start" method.
+public void start()
+{
+	System.out.println("Hy i am parent and i am starting");
+}
+}
+
+class TwoWheeler extends Vehicle
+{
+	public void start()
+	{
+		System.out.println("twowheeler");
+	}
+}
+
+class ThreeWheeler extends Vehicle
+{
+	public void start()
+	{
+		System.out.println("threewheeler");
+	}
+}
+class FourWheeler extends Vehicle
+{
+	public void start()
+	{
+		System.out.println("fourwheeler");
+	}
+}
+
+class Shape
+{
+//	Define a class “Shape” with “draw()” function . Now derive  classes like “Circle”, “Polygon”,”Rectangle” etc.
+//	from “Shape” and override “draw()” function. Define a class “ShapeDemo” in which  write  main()  function.
+//	In the main function create a reference to Shape class referring to any of the sub class. 
+//	Using this reference, call “draw()” and check the result.
+	public void draw()
+	{
+		System.out.println("Hy this parent Shape");
+	}
+}
+class Circle extends Shape
+{
+	public void draw()
+	{
+		System.out.println("Hy this child Circle");
+	}
+}
+class Polygon extends Shape
+{
+	public void draw()
+	{
+		System.out.println("Hy this child Polygon");
+	}
+}
+class Rectangle extends Shape
+{
+	public void draw()
+	{
+		System.out.println("Hy this child Rectangle");
+	}
+}
+
+class Boss
+{
+//	 Define a parent class with one function. 
+//	 Define child class with the function having same name as of parent class function,
+//	 but having different argument.
+	//Create an instance of child class and call the functions. Make sure u have followed the concept of “function overloading “ in inheritance.
+    public void fun()
+    {
+    	System.out.println("This is parent");
+    }
+}
+class Boss_child extends Boss
+{
+	int a=12;
+	 public void fun(int a)
+	    {
+	    	System.out.println("This is child");
+	    	System.out.println("The value of a is "+a);
+	    }
+}
+
+class parent_overridden
+{
+//	Define a parent and a child class . Now explain function overriding with Example.
+	public parent_overridden()
+	{
+		System.out.println("Hy this is parent and this will be overridden");
+	}
+	public void fun()
+	{
+		System.out.println("HYYYY");
+	}
+}
+class child_parent_overridden extends parent_overridden
+{
+//	Define a parent and a child class . Now explain function overriding with Example.
+	public child_parent_overridden()
+	{
+		System.out.println("Hy this is chuld and this will be override parent");
+	}
+	public void fun()
+	{
+		System.out.println("Heloooooooo");
+	}
+}
+
+class Grandfather
+{
+	public Grandfather()
+	{
+		System.out.println("Hy i am grandfather");
+	}
+}
+
+class parent111 extends Grandfather
+{
+	public parent111()
+	{
+		System.out.println("Hy i am parent 1");
+	}
+}
+
+class parent222 extends Grandfather
+{
+	public parent222()
+	{
+		System.out.println("Hy i am parent 2");
+	}
+}
+
+
+class Parent2
+{
+	public Parent2()
+	{
+		System.out.println("This is grandParent");
+	}
+}
+
+class child extends Parent2
+{
+	public child()
+	{
+		System.out.println("This is Parent");
+	}
+}
+
+class child2 extends child
+{
+	public child2()
+	{
+		System.out.println("This is grandchild");
+	}
+}
+
+
+class Parent
+{
+//	Show the example of single level inheritance with constructor invocation.
+	public Parent()
+	{
+		System.out.println("Hy this is parent constructor");
+	}
+}
+class single_level extends Parent
+{
+	public single_level()
+	{
+		System.out.println("Hy this is child constructor");
+	}
+}
+
+class question_2
+{
+//	2)	Create a class with static and non-static member variables. Define static and non-static member functions. 
+//Create instance of this class and call both static and non-static member functions.
+	
+	
+	//static and non-static varianbles
+	int a=23;
+	int b=34;
+	static int c=56;
+	static int d=67;
+	//static and non-static functions
+	public static void method1()
+	{
+		System.out.println("I am static member function");
+	}
+	public void method2()
+	{
+		System.out.println("I am a non-static function");
+	}
+}
+
+class First
+{
+//	/1)	Define 2 classes “First” and “Second” with member variables , 
+//member functions and constructors of  your choice. 
+//Now define a class “Two” in which define main function . 
+//In main function create various instances of First and Second  and call their individual member functions.
+//	/
+	//member variables
+	int a;
+	int b;
+	public void method()
+	{
+		System.out.println("This is the instance method of class First");
+	}
+	public First()
+	{
+		System.out.println("This is defaukt constructor of class First");
+	}
+	
+}
+class Second
+{
+	//member variables
+	public Second()
+	{
+		System.out.println("This is default constructor of class Second");
+	}
+	int a;
+	int b;
+	public void method()
+	{
+		System.out.println("This is the instance method of class Second");
+	}
+	
+}
+
+class question_3
+{
+//	Define a class “Check” in which declare member variables using  different accessibility modifiers i.e. 
+//	<default>, private ,public and protected.   Define a function “disp”  which should be public.  
+//	Define a class “CheckDemo” in which you will write “main()” function. 
+//	Create an instance of  the class “Check” and  show how many  
+//	variables can be accessed directly and how many indirectly.
+//	//
+	int a=12;
+	private int b=23;
+	public int c=34;
+	protected int d=45;
+	public void disp()
+	{
+//		System.out.println("Hyyyyy");
+		System.out.println("The value of b is "+b);
+	}
+}
+
+public class assignment_4_4 {
+public static void main(String args[])
+{
+Scanner scanner=new Scanner(System.in);
+//question_3 q=new question_3();
+//System.out.println("The answer is "+q.a);
+//System.out.println("The answer is "+q.c);
+//System.out.println("The answer is "+q.d);
+//q.disp();
+
+//First obj1=new First();
+//obj1.method();
+//
+//Second obj2=new Second();
+//obj2.method();
+//System.out.println("Calling the static variable and functions");
+//System.out.println(question_2.c);
+//System.out.println(question_2.d);
+//System.out.println(question_2.method1());
+//
+//System.out.println();
+//System.out.println("The non-static and non-static variables are");
+//question_2 q1=new question_2();
+//System.out.println(q1.a);
+//System.out.println(q1.b);
+//System.out.println();
+//System.out.println("The object creation can call static numbers and functions");
+//System.out.println(q1.c);
+//System.out.println(q1.d);
+//single_level q=new single_level();
+//child2 n=new child2();
+//parent111 n=new parent111();
+//parent222 n2=new parent222();
+
+//parent_overridden p=new parent_overridden();
+//p.fun();
+//child_parent_overridden p1=new child_parent_overridden();
+//p1.fun();
+//parent_overridden er=new child_parent_overridden();
+//er.fun();
+//Boss b=new Boss();
+//b.fun();
+//Boss_child c=new Boss_child();
+//c.fun(12);
+//Boss bass=new Boss_child();
+//bass.fun(23);
+Shape sh1=new Circle();
+Shape sh2=new Polygon();
+Shape sh3=new Rectangle();
+sh1.draw();
+sh2.draw();
+sh3.draw();
+
+scanner.close();
+}
+}
