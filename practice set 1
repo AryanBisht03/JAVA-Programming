@@ -1,0 +1,50 @@
+package practiceset1;
+
+import java.util.Scanner;
+
+class Sum_of_3_numbers
+{
+	float num1;
+	float num2;
+	float num3;
+	Sum_of_3_numbers(float num1,float num2,float num3)
+	{
+		this.num1=num1;
+		this.num2=num2;
+		this.num3=num3;
+	}
+	public float sum()
+	{
+		float sumo=num1+num2+num3;
+		return sumo;
+	}
+};
+
+
+public class practiceset1 {
+public void greet(String name)
+{
+	System.out.println("helooooooo "+name);
+}
+
+public float kilo_to_miles(float kilometers)
+{
+	return kilometers*0.62137F;
+}
+
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	Sum_of_3_numbers sum1=new Sum_of_3_numbers(12.34F,23.56F,34.76F);
+	System.out.println("The sum of "+sum1.num1+", "+sum1.num2+", "+sum1.num3+" is "+sum1.sum());
+    System.out.println("Enter your name");
+	String name;
+	name=scanner.nextLine();
+	practiceset1 p1=new practiceset1();
+	p1.greet(name);
+	practiceset1 p2=new practiceset1();
+	float miles=p2.kilo_to_miles(1.001F);
+	System.out.println("The miles are "+miles);
+	System.out.println("Enter the number");
+}
+}
