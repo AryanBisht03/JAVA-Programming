@@ -1,0 +1,39 @@
+package marks;
+import java.util.*;
+class marks_5
+{
+	float m1;
+	float m2;
+	float m3;
+	float m4;
+	float m5;
+	public marks_5(float m1,float m2,float m3,float m4,float m5)
+	{
+		this.m1=m1;
+		this.m2=m2;
+		this.m3=m3;
+		this.m4=m4;
+		this.m5=m5;
+	}
+	float percentage_calculator()
+	{
+		float percentage=((m1+m2+m3+m4+m5)/500)*100;
+		return percentage;
+	}
+};
+public class marks_of_student {
+
+public static void main(String args[])
+{
+	marks_5 marks=new marks_5(23,34,45,56,67);
+	float percentage=marks.percentage_calculator();
+	System.out.println("You got "+percentage+"%");
+	if(percentage>=75)
+		System.out.println("Distinction");
+	else if(percentage<=35)
+		System.out.println("Fail");
+	else if(percentage>=36 && percentage<=65)
+		System.out.println("Second devision");
+	
+}
+}
