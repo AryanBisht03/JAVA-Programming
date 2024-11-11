@@ -1,0 +1,30 @@
+(* 7) using nested for loop display following :
+
+A  a
+A  b
+A  c
+
+B  a
+B  b
+B  c
+
+C  a
+C  b
+C  c *)
+
+package day_1;
+import java.util.*;
+public class nestedloop {
+public static void main(String args[])
+{
+	for(int i=65;i<=67;i++)
+	{
+		for(int j=97;j<=99;j++)
+		{
+			System.out.print((char)i+" ");
+			System.out.println((char)j);
+		}
+		System.out.println();
+	}
+}
+}
