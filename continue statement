@@ -1,0 +1,15 @@
+package day_1;
+import java.util.*;
+
+public class continue_ {
+public static void main(String args[])
+{
+	for(int i=3;i<=30;i++)
+	{
+		if(i==24)
+			continue;
+		else
+			System.out.print(i+" ");
+	}
+}
+}
