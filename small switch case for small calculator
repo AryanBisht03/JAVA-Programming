@@ -1,0 +1,45 @@
+package day_1;
+import java.util.*;
+public class question2 {
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	int num1;
+	int num2;
+	System.out.println("Enter first number");
+	num1=scanner.nextInt();
+	System.out.println("Enter second number");
+	num2=scanner.nextInt();
+	System.out.println("*********OPERATIONS*********");
+	System.out.println("+");
+	System.out.println("-");
+	System.out.println("X");
+	System.out.println("/");
+	System.out.println("Enter your choice");
+    char choice;
+    choice=scanner.next().charAt(0);
+    switch(choice)
+    {
+    case '+':
+    	int result=num1+num2;
+    	System.out.println(result);
+    	break;
+    	
+    case '-':
+    	int result2=num1-num2;
+    	System.out.println(result2);
+    	break;
+    	
+    case '*':
+    	int result3=num1*num2;
+    	System.out.println(result3);
+    	break;
+    	
+    case '/':
+    	int result4=num1/num2;
+    	System.out.println(result4);
+    	break;
+    
+    }
+}
+}
