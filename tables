@@ -1,0 +1,16 @@
+package day_1;
+import java.util.*;
+public class day_1_assignment_progs {
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	int n;
+	System.out.println("Enter the number whose table you want to know");
+	n=scanner.nextInt();
+	for(int i=1;i<11;i++)
+	{
+		System.out.println(n+" X "+i+" = "+n*i);
+	}
+	
+}
+}
