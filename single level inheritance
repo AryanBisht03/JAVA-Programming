@@ -1,0 +1,28 @@
+// package Aryan;
+class Parent
+{
+	private int name;
+	private int age;
+	public Parent()
+	{
+		System.out.println("This is parent class default constructor");
+	}
+}
+
+class Child extends Parent
+{
+	private int address;
+	private int subject_id;
+	public Child()
+	{
+		System.out.println("This is child class default constructor");
+	}
+}
+
+public class main {
+    public static void main(String args[])
+    {
+        Child child=new Child();
+    }
+
+}
