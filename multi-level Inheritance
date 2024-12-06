@@ -1,0 +1,52 @@
+import java.util.*;
+class Grandparent
+{
+    private int a;
+    public Grandparent()
+    {
+        System.out.println("Hy this is the default constructor of the grand parent class and it is called first");
+    }
+    public void disp()
+    {
+        System.out.print("hello Grandparent");
+    }
+}
+class parent extends Grandparent{
+    private int b;
+    public parent()
+    {
+        System.out.println("Hy this is the default constructor of the  parent class and it is called second");
+    }
+    public void disp()
+    {
+        System.out.print("hello parent");
+    }
+}
+
+class child extends parent{
+    private int c;
+    public child()
+    {
+        System.out.println("Hy this is the default constructor of the  child class and it is called third");
+    }
+    public void disp()
+    {
+        System.out.print("hello child");
+    }
+}
+
+
+public class multilevel
+{
+     public static void main(String args[])
+     {
+         System.out.print("Message");
+        //  Grandparent g=new Grandparent();
+        //  g.disp();
+         parent p=new parent();
+        //  child c=new child();
+        //  g.disp();
+         p.disp();
+        //  c.disp();
+     }
+}
