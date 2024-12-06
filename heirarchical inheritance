@@ -1,0 +1,45 @@
+import java.util.*;
+class Papa
+{
+    private int a;
+    public Papa()
+    {
+        System.out.print("Papa");
+    }
+}
+
+class Megha extends Papa
+{
+    private int a;
+    public Megha()
+    {
+        System.out.print("Megha");
+    }
+}
+
+
+class Aryan extends Papa
+{
+    private int a;
+    public Aryan()
+    {
+        System.out.print("Aryan");
+    }
+}
+
+class Priya extends Papa
+{
+    private int a;
+    public Priya()
+    {
+        System.out.print("Priya");
+    }
+}
+
+public class heirarchical
+{
+    public static void main(String args[])
+    {
+        Aryan ar=new Aryan();
+    }
+}
