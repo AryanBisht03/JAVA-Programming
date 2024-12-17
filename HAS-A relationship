@@ -1,0 +1,95 @@
+package new_day;
+import java.util.*;
+class Human
+{
+	public void human()
+	{
+		System.out.println("This is the human class!");
+	}
+}
+
+class Men extends Human
+{
+	Hand h=new Hand();
+	Leg l=new Leg();
+	Mouth m=new Mouth();
+	Anus a=new Anus();
+	public void men()
+	{
+		System.out.println("This is a Men class");
+		// the has-a relationship
+		l.leg();
+		h.hand();
+		m.mouth();
+		a.anus();
+	}
+}
+
+class Women extends Human
+{
+	Hand h=new Hand();
+	Leg l=new Leg();
+	Mouth m=new Mouth();
+	Vegina a=new Vegina();
+	public void women()
+	{
+		System.out.println("This is a woMen class");
+		// the has-a relationship
+				l.leg();
+				h.hand();
+				m.mouth();
+				a.vegina();
+	}
+}
+
+class Hand
+{
+	public void hand()
+	{
+		System.out.println("This is a hand class");
+	}
+}
+
+class Leg
+{
+	public void leg()
+	{
+		System.out.println("This is a leg class");
+	}
+}
+
+class Mouth
+{
+	public void mouth()
+	{
+		System.out.println("This is a mouth class");
+	}
+}
+
+class Anus
+{
+	public void anus()
+	{
+		System.out.println("This is a anus class");
+	}
+}
+
+class Vegina
+{
+	public void vegina()
+	{
+		System.out.println("This is a vegina class");
+	}
+}
+
+public class HAS {
+public static void main(String args[])
+{
+  Men m=new Men();
+  m.human();
+  m.men();
+  Women w=new Women();
+  w.human();
+  w.women();
+}
+}
