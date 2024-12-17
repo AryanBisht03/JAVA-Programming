@@ -1,0 +1,61 @@
+package new_day;
+// arrays of objects and taking input from the user
+import java.util.*;
+class Object
+{
+	private int num;
+	private int num2;
+	private int num3;
+	public Object(int num,int num2,int num3)
+	{
+		this.num=num;
+		this.num2=num2;
+		this.num3=num3;
+	}
+	public int get_num1()
+	{
+	 return num;
+	}
+	public int get_num2()
+	{
+	 return num2;
+	}
+	public int get_num3()
+	{
+	 return num3;
+	}
+}
+public class Objects {
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	int n;
+	System.out.println("Enter the number of objects you wanted");
+	n=scanner.nextInt();
+	Object arr[]=new Object[n];
+	for(int i=0;i<n;i++)
+	{
+		int element1;
+		System.out.println("Enter the num1 for object "+(i+1));
+		element1=scanner.nextInt();
+		
+		int element2;
+		System.out.println("Enter the num2 for object "+(i+1));
+		element2=scanner.nextInt();
+		
+		int element3;
+		System.out.println("Enter the num3 for object "+(i+1));
+		element3=scanner.nextInt();
+		
+		
+		arr[i]=new Object(element1,element2,element3);
+	}
+	
+	for(int i=0;i<n;i++)
+	{
+		System.out.println("the num1 of object "+(i+1)+" is "+arr[i].get_num1());
+		System.out.println("the num1 of object "+(i+1)+" is "+arr[i].get_num2());
+		System.out.println("the num1 of object "+(i+1)+" is "+arr[i].get_num3());
+	}
+}
+}
