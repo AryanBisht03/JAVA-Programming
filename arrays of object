@@ -1,0 +1,36 @@
+package new_day;
+//array of objects
+import java.util.*;
+class Arrays_of_object
+{
+	private int num;
+	public Arrays_of_object(int num)
+	{
+		this.num=num;
+	}
+	public int get_number()
+	{
+		System.out.println("The value of the nummber is "+num);
+		return num;
+	}
+}
+public class Array_of_objects {
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	System.out.println("Hello world");
+	System.out.println("This is an example of arrays of object");
+	int n;
+	System.out.println("Enter the number of objects you wanted");
+	n=scanner.nextInt();
+	Arrays_of_object arr[]=new Arrays_of_object[n];
+	for(int i=0,j=10;i<n;i++,j+=10)
+	{
+		arr[i]=new Arrays_of_object(j);
+	}
+	for(int i=0;i<n;i++)
+	{
+		System.out.println(arr[i].get_number());
+	}
+}
+}
