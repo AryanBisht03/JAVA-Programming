@@ -1,0 +1,54 @@
+//1)	Define an interface “Vechicle” with “start()” function . 
+//Now derive  classes like “TwoWheeler”, “ThreeWheeler”,”FourWheeler” etc.
+//from “Vehicle” and override “start()” function. 
+//Define a class “VDemo” in which  write  main()  function. 
+//In the main function create a reference to Vehicle  class referring to any of the sub class.
+//Using this reference, call “start" method.
+package new_day;
+import java.util.*;
+
+interface Vehicle
+{
+	public void start();
+}
+
+class TwoWheeler implements Vehicle
+{
+	@Override
+	public void start()
+	{
+		System.out.println("2");
+	}
+}
+
+class ThreeWheeler implements Vehicle
+{
+	@Override
+	public void start()
+	{
+		System.out.println("3");
+	}
+}
+
+class FourWheeler implements Vehicle
+{
+	@Override
+	public void start()
+	{
+		System.out.println("4");
+	}
+}
+
+
+public class NEX {
+public static void main(String args[])
+{
+	//upcasting
+	Vehicle v1=new TwoWheeler();
+	Vehicle v2=new ThreeWheeler();
+	Vehicle v3=new FourWheeler();
+	v1.start();
+	v2.start();
+	v3.start();
+}
+}
