@@ -1,0 +1,60 @@
+//5)	Show the example of multi-level inheritance with constructor invocation.
+package new_day;
+import java.util.*;
+
+class GParent
+{
+	public void show()
+	{
+		System.out.println("G Parent");
+	}
+}
+
+class Parents extends GParent
+{
+	public void show2()
+	{
+		System.out.println("Parent");
+	}
+}
+
+class Childs extends Parents
+{
+	public void show3()
+	{
+		System.out.println("Child");
+	}
+}
+
+public class MUl {
+public static void main(String args[])
+{
+	//by normal
+	Childs ch=new Childs();
+	ch.show();
+	ch.show2();
+	ch.show3();
+	
+	System.out.println();
+	System.out.println();
+	
+	
+	//by upcasting
+	GParent gp=new Childs();
+	gp.show();
+	Parents p=new Childs();
+	p.show();
+	p.show2();
+	if(gp instanceof Childs)
+	{
+		Childs chi=(Childs)gp;
+		chi.show();
+		chi.show2();
+		chi.show3();
+	}
+	else
+	{
+		System.out.println("Downcasting fails");
+	}
+}
+}
