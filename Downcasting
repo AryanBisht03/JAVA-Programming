@@ -1,0 +1,38 @@
+package new_day;
+import java.util.*;
+//downcasting treating back the dog as a dog 
+class Animal
+{
+	public void parent()
+	{
+		System.out.println("Hy im parent");
+	}
+}
+
+class Dog extends Animal
+{
+	public void child()
+	{
+		System.out.println("HY im child");
+	}
+}
+
+
+public class Downcasting {
+public static void main(String args[])
+{
+	Animal animal=new Dog();
+	animal.parent();
+	if(animal instanceof Dog )
+	{
+		Dog d=(Dog)animal;  //downcasting
+		d.child();
+		d.parent();	
+	}
+	else
+	{
+		System.out.println("Downcasting not possible");
+	}
+	
+}
+}
