@@ -1,0 +1,125 @@
+package new_day;
+import java.util.*;
+
+class Parent1
+{
+	public void parent()
+	{
+		System.out.println("I am parent");
+	}
+}
+
+class Child1 extends Parent1
+{
+	public void child1()
+	{
+		System.out.println("I am child 1");
+	}
+}
+
+class Child2 extends Parent1
+{
+	public void child2()
+	{
+		System.out.println("I am child 2");
+	}
+}
+
+class Child11 extends Child1
+{
+	public void child11()
+	{
+		System.out.println("I am child 11");
+	}
+}
+
+class Child111 extends Child1
+{
+	public void child1111()
+	{
+		System.out.println("I am child 111");
+	}
+}
+
+class Child22 extends Child2
+{
+	public void child22()
+	{
+		System.out.println("I am child 22");
+	}
+}
+
+class Child222 extends Child2
+{
+	public void child222()
+	{
+		System.out.println("I am child 222");
+	}
+}
+
+public class Hierar {
+public static void main(String args[])
+{
+	// by normal calls
+	Child111 ch=new Child111();
+	ch.parent();
+	ch.child1();
+	ch.child1111();
+	
+	System.out.println();
+	System.out.println();
+	
+	Child11 ch1=new Child11();
+	ch1.parent();
+	ch1.child1();
+	ch1.child11();
+	
+	System.out.println();
+	System.out.println();
+	
+	Child22 ch2=new Child22();
+	ch2.parent();
+	ch2.child2();
+	ch2.child22();
+	
+	System.out.println();
+	System.out.println();
+	
+	Child222 ch3=new Child222();
+	ch3.parent();
+	ch3.child2();
+	ch3.child222();
+	
+	System.out.println();
+	System.out.println();
+	
+	System.out.println("By upcasting calls");
+	
+	// by upcasting calls
+	 Parent1 p=new Child11();
+	 p.parent();
+	 Child1 c=new Child11();
+	 c.parent();
+	 c.child1();
+	 
+	 System.out.println();
+		System.out.println();
+		
+		System.out.println("By downcasting calls");
+		
+	 //by downcasting calls
+	 if(p instanceof Child11)
+	 {
+		 Child11 ch11=(Child11)p;
+		 ch11.parent();
+		 ch11.child1();
+		 ch11.child11();
+	 }
+	 else
+	 {
+		 System.out.println("Downcasting not done");
+	 }
+	 
+	
+}
+}
