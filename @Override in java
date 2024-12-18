@@ -1,0 +1,28 @@
+//7)	Define a parent and a child class . Now explain function overriding with Example.
+package new_day;
+class Par
+{
+	
+	public void show()
+	{
+		System.out.println("HY Parent");
+	}
+}
+
+class Chi extends Par
+{
+	@Override
+	public void show()
+	{
+		System.out.println("HY Child");
+	}
+}
+
+public class Overrides {
+public static void main(String args[])
+{
+	Chi ch=new Chi();
+	//will override
+	ch.show();
+}
+}
