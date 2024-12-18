@@ -1,0 +1,55 @@
+//9)	Define a class “Shape” with “draw()” function . 
+//Now derive  classes like “Circle”, “Polygon”,”Rectangle” etc.
+//from “Shape” and override “draw()” function. 
+//Define a class “ShapeDemo” in which  write  main()  function. 
+//In the main function create a reference to Shape class referring 
+//to any of the sub class. Using this reference, call “draw()” and check the result.
+package new_day;
+import java.util.*;
+class Shape
+{
+	public void draw()
+	{
+		System.out.println("Shape");
+	}
+}
+
+class Circle extends Shape
+{
+	@Override
+	public void draw()
+	{
+		System.out.println("Circle");
+	}
+}
+
+class Rectangle extends Shape
+{
+	@Override
+	public void draw()
+	{
+		System.out.println("Rectangle");
+	}
+}
+
+class Polygon extends Shape
+{
+	@Override
+	public void draw()
+	{
+		System.out.println("Polygon");
+	}
+}
+
+
+public class Ranger {
+public static void main(String args[])
+{
+	Circle c=new Circle();
+	Rectangle r=new Rectangle();
+	Polygon p=new Polygon();
+	c.draw();
+	r.draw();
+	p.draw();
+}
+}
