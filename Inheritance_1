@@ -1,0 +1,115 @@
+//1)	Define 2 classes “First” and “Second” with member variables , 
+//member functions and constructors of  your choice.
+//Now define a class “Two” in which define main function .
+//In main function create various instances of First and Second  and 
+//call their individual member functions.
+package new_day;
+
+import java.util.*;
+
+class First
+{
+private int a;
+private int b;
+private int c;
+public First(int a,int b,int c)
+{
+	this.a=a;
+	this.b=b;
+	this.c=c;
+}
+public int geta()
+{
+	return a;
+}
+
+public int getb()
+{
+	return b;
+}
+
+public int getc()
+{
+	return c;
+}
+}
+
+class Second
+{
+	private int a;
+	private int b;
+	private int c;
+	public Second(int a,int b,int c)
+	{
+		this.a=a;
+		this.b=b;
+		this.c=c;
+	}
+	public int geta()
+	{
+		return a;
+	}
+
+	public int getb()
+	{
+		return b;
+	}
+
+	public int getc()
+	{
+		return c;
+	}
+}
+
+public class Inhertance_1 {
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	int n;
+	System.out.println("Enter the number of instances you wanted for class First");
+	n=scanner.nextInt();
+	First arr[]=new First[n];
+	System.out.println("Enter the number of instances you wanted for class Second");
+	int n2=scanner.nextInt();
+	Second arr2[]=new Second[n2];
+	for(int i=0;i<n;i++)
+	{
+	    System.out.println("Enter the element "+(i+1)+" for object "+(i+1)+" of class first");
+	    int element1=scanner.nextInt();
+	    System.out.println("Enter the element "+(i+2)+" for object "+(i+1)+" of class first");
+	    int element2=scanner.nextInt();
+	    System.out.println("Enter the element "+(i+3)+" for object "+(i+1)+" of class first");
+	    int element3=scanner.nextInt();
+	    arr[i]=new First(element1,element2,element3);
+	}
+	for(int i=0;i<n2;i++)
+	{
+	    System.out.println("Enter the element "+(i+1)+" for object "+(i+1)+" of class Second");
+	    int element1=scanner.nextInt();
+	    System.out.println("Enter the element "+(i+2)+" for object "+(i+1)+" of class Second");
+	    int element2=scanner.nextInt();
+	    System.out.println("Enter the element "+(i+3)+" for object "+(i+1)+" of class Second");
+	    int element3=scanner.nextInt();
+	    arr2[i]=new Second(element1,element2,element3);
+	}
+	System.out.println("For Class First");
+	for(int i=0;i<n;i++)
+	{
+		System.out.println(arr[i].geta());
+		System.out.println(arr[i].getb());
+		System.out.println(arr[i].getc());
+	}
+	System.out.println();
+	System.out.println();
+	
+	System.out.println("For Class Second");
+	for(int i=0;i<n;i++)
+	{
+		System.out.println(arr2[i].geta());
+		System.out.println(arr2[i].getb());
+		System.out.println(arr2[i].getc());
+	}
+	
+		
+}
+}
