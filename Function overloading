@@ -1,0 +1,33 @@
+//8)	  Define a parent class with one function. Define child class with the function having 
+//same name as of parent class function, but having different argument.
+//Create an instance of child class and call the functions. 
+//Make sure u have followed the concept of “function overloading “ in inheritance.
+
+package new_day;
+import java.util.*;
+class Para
+{
+	public void show()
+	{
+		System.out.println("This is a parent function");
+	}
+}
+
+class Chii extends Para
+{
+	int num;
+	public void show(int num)
+	{
+		this.num=num;
+		System.out.println("The number is "+num);
+	}
+}
+
+public class New {
+public static void main(String args[])
+{
+	Chii ch=new Chii();
+	ch.show();
+	ch.show(12);
+}
+}
