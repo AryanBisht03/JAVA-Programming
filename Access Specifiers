@@ -1,0 +1,38 @@
+//3)	Define a class “Check” in which declare member variables using  different 
+//accessibility modifiers i.e.  <default>, private ,public and protected.  
+//Define a function “disp”  which should be public. 
+//Define a class “CheckDemo” in which you will write “main()” function.
+//Create an instance of  the class “Check” and  show how many 
+//variables can be accessed directly and how many indirectly.
+package new_day;
+import java.util.*;
+
+class Check
+{
+    int a=11;  //default--> can be accessed within the same package
+	private int b=22; //private---> can be accessed only in the class
+	public int c=33;   // public---> can be accessed by any class and package
+	protected int d=44; // protected can be accessed by any other package but should have subclasses of the parent class
+//   Check(int a,int b,int c,int d)
+//   {
+//     this.a=a;
+//     this.b=b;
+//     this.c=c;
+//     this.d=d;
+//   }
+	public void disp()
+   {
+	   System.out.println("The value of a is "+a);
+	   System.out.println("The value of b is "+b);
+	   System.out.println("The value of c is "+c);
+	   System.out.println("The value of d is "+d);
+   }
+}
+
+public class Yo {
+public static void main(String args[])
+{
+	Check c=new Check();
+	c.disp();
+}
+}
