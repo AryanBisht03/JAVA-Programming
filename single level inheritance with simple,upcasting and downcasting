@@ -1,0 +1,53 @@
+//4)	Show the example of single level inheritance with constructor invocation.
+package new_day;
+import java.util.*;
+class PP
+{
+//	PP()
+//	{
+//		System.out.println("Hy this is PArent11111 constructor");
+//	}
+	public void disp()
+	{
+		System.out.println("Hy this is parent");
+	}
+}
+
+class CH extends PP
+{
+//	CH()
+//	{
+//		System.out.println("this is child constructor");
+//	}
+//	@Override
+	public void disp2()
+	{
+		System.out.println("Hy this is child");
+	}
+}
+
+
+public class Single {
+public static void main(String args[])
+{
+//	// normal invocation
+//	CH child=new CH();
+//	child.disp();
+	
+	// now through upcasting
+	PP p=new CH();
+	p.disp();
+	
+	// now through downcasting
+	if(p instanceof CH)
+	{
+		CH c=(CH) p;
+		c.disp();
+		c.disp2();
+	}
+	else
+	{
+		System.out.println("Downcasting not done");
+	}
+}
+}
