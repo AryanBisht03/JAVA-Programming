@@ -1,0 +1,29 @@
+//2) create a class "Vehicle", define a method "public void start()" in it. 
+//From this class derive a class FourWheeler. How will u override "start()" method of parent class ?
+package new_day;
+import java.util.*;
+
+class Vehicles
+{
+	public void start()
+	{
+		System.out.println("Parent");
+	}
+}
+
+class FourWheelers extends Vehicles
+{
+	@Override
+	public void start()
+	{
+		System.out.println("Child");
+	}
+}
+
+public class In {
+public static void main(String args[])
+{
+	Vehicles v=new FourWheelers();
+	v.start();
+}
+}
