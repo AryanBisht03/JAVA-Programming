@@ -1,0 +1,54 @@
+//1) Create a multi-level inheritance , instantiate the child class and observe constructor invocation.
+//Also show, if needed how will u invoke parent class constructor from child class ?
+package new_day;
+import java.util.*;
+
+class GP
+{
+   GP()
+   {
+	   System.out.println("GP default constructor");
+   }
+   int n;
+   GP(int n)
+   {
+	   this.n=n;
+	   System.out.println("This is a default constructor of GP having value "+n);
+   }
+}
+
+class P extends GP
+{
+	P()
+	   {
+		   System.out.println("P default constructor");
+	   }
+	 P(int n)
+	   {
+		 super(n);
+		   this.n=n;
+		   System.out.println("This is a default constructor of P having value "+n);
+	   }
+}
+
+class C extends P
+{
+	C()
+	   {
+		   System.out.println("C default constructor");
+	   }
+	 C(int n)
+	   {
+		 super(n);
+		   this.n=n;
+		   System.out.println("This is a default constructor of C having value "+n);
+	   }
+}
+
+public class Ass1 {
+public static void main(String args[])
+{
+	C c=new C(45);
+	
+}
+}
