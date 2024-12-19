@@ -1,0 +1,55 @@
+//5) create abstract class Shape. declare "draw()" function as abstract.
+//From this class define "Triangle","Polygon" and "Circle" .
+//create an array of Shape having 3 elements.
+//store child objects into this array . and call
+//their draw function.
+package new_day;
+import java.util.*;
+// you cannot make object of an abstract class, but abstract class may contain abstract methods and normal methods.
+// but the abstract methods can not be inherited but we can define them in the live class.
+abstract class Shape
+{
+	abstract void draw();
+}
+
+class Triangle extends Shape
+{
+	@Override
+	public void draw()
+	{
+		System.out.println("Draws Triangle");
+	}
+}
+
+class Circlee extends Shape
+{
+	@Override
+	public void draw()
+	{
+		System.out.println("Draws Circle");
+	}
+}
+
+class Polygone extends Shape
+{
+	@Override
+	public void draw()
+	{
+		System.out.println("Draws Polygon");
+	}
+}
+
+
+
+public class QA {
+public static void main(String args[])
+{
+	Shape arr[]=new Shape[3];
+	arr[0]=new Circlee();
+	arr[1]=new Polygone();
+	arr[2]=new Triangle();
+	arr[0].draw();
+	arr[1].draw();
+	arr[2].draw();
+}
+}
