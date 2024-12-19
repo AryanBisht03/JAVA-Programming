@@ -1,0 +1,32 @@
+package new_day;
+//covarient
+import java.util.*;
+
+class Ani
+{
+	Ani make_animal()
+	{
+		System.out.println("This will make an animal");
+		return new Ani();
+	}
+}
+
+class Chi_ani_dog extends Ani
+{
+	@Override
+	Chi_ani_dog make_animal()
+	{
+		System.out.println("This will make a dog");
+		return new Chi_ani_dog();
+	}
+}
+
+public class Covarent {
+public static void main(String args[])
+{
+	Ani a=new Ani();
+	a.make_animal();
+	Chi_ani_dog c=new Chi_ani_dog();
+	c.make_animal();
+}
+}
