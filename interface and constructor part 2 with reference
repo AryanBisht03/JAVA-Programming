@@ -1,0 +1,64 @@
+
+package Aryan;
+//9) create interface "Game" , have an abstract method "play()". from this interface implements classes like "Cricket" 
+//, "FootBall" and "Tennis".
+//Now Define one more class 
+//public class Demo with main function.
+//In this class have a static method "perform" which will take interface reference as parameter.
+//inside "perform()" see to it that any child object passed ,its "play()" method should be invoked.
+//Call "perform()" method from main function.
+
+import java.util.*;
+interface Game
+{
+	void play();
+}
+
+class Cricket implements Game
+{
+	@Override
+	public void play()
+	{
+		System.out.println("This is Cricket");
+	}
+}
+
+class Tennis implements Game
+{
+	@Override
+	public void play()
+	{
+		System.out.println("This is Tennis");
+	}
+}
+
+class Football implements Game
+{
+	@Override
+	public void play()
+	{
+		System.out.println("This is Football");
+	}
+}
+//In this class have a static method "perform" which will take interface reference as parameter.
+//inside "perform()" see to it that any child object passed ,its "play()" method should be invoked.
+//Call "perform()" method from main function.
+public class QW {
+static void perform(Game g)
+{
+	g.play();
+}
+public static void main(String args[])
+{
+	Cricket c=new Cricket();
+	Football f=new Football();
+	Tennis t=new Tennis();
+	c.play();
+	f.play();
+	t.play();
+	perform(c);
+	perform(f);
+	perform(t);
+	
+}
+}
