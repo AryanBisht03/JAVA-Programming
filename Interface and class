@@ -1,0 +1,73 @@
+package Aryan;
+//7) Define class "Parent1" with some data.
+//Define interface "Parent2" with some methods.
+//Derive a class "Child" from "Parent1" and "Parent2", instantiate it and call the members.
+
+import java.util.*;
+class Parent1
+{
+	int a;
+	int b;
+	Parent1(int a,int b)
+	{
+		this.a=a;
+		this.b=b;
+	}
+	public void disp1()
+	{
+		System.out.println("A="+a);
+		System.out.println("B="+b);
+	}
+}
+
+interface Parent2
+{
+	void disp2();
+	void disp3();
+}
+
+class Chi extends Parent1 implements Parent2
+{
+	int a;
+	int b;
+	Chi(int a,int b)
+	{
+		super(a,b);
+		this.a=a;
+		this.b=b;
+	}
+	
+	@Override
+	public void disp1()
+	{
+		System.out.println("( disp 1 of child");
+		System.out.println("A="+a);
+		System.out.println("B="+b+" )");
+	}
+	public void disp2()
+	{
+		System.out.println("disp 2 of child");
+	}
+	public void disp3()
+	{
+		System.out.println("Disp 3 of child");
+	}
+}
+
+public class WWW {
+public static void main(String args[])
+{
+//	Chi c=new Chi(12,23);
+//	c.disp1();
+//	c.disp2();
+//	c.disp3();
+	//upcasting for the class
+	Parent1 p=new Chi(1,2);
+	p.disp1();
+	Parent2 p2=new Chi(2,3);
+	p2.disp2();
+	p2.disp3();
+	
+	
+}
+}
