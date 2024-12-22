@@ -1,0 +1,64 @@
+package Aryan;
+import java.util.*;
+class Animal
+{
+	void makeSound()
+	{
+		System.out.println("Making sound");
+	}
+}
+class Tiger extends Animal
+{
+	void makeSound()
+	{
+		System.out.println("roar");
+	}
+}
+class Dog extends Animal
+{
+	void makeSound()
+	{
+		System.out.println("bark");
+	}
+}
+class Cat extends Animal
+{
+	void makeSound()
+	{
+		System.out.println("meow");
+	}
+}
+
+public class OBJ {
+	public static void perform(Animal a)
+	{
+		a.makeSound();
+	}
+public static void main(String args[])
+{
+	Scanner scanner=new Scanner(System.in);
+	System.out.println("Welcome to the Zoo");
+	System.out.println("Enter the animal who you wanted to get");
+	int n;
+	
+	System.out.println("1.Tiger");
+	System.out.println("2.Dog");
+	System.out.println("3.Cat");
+	n=scanner.nextInt();
+	switch(n)
+	{
+	case 1:
+		Tiger t=new Tiger();
+		perform(t);
+		break;
+	case 2:
+		Dog d=new Dog();
+		perform(d);
+		break;
+	case 3:
+		Cat c=new Cat();
+		perform(c);
+		break;
+	}
+}
+}
