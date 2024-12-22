@@ -1,0 +1,43 @@
+package Aryan;
+import java.util.*;
+
+//6) Define interface "A" with "disp1()" method.
+//Derive from "A", interface "B" with "disp2" method.
+//Derive class "C" , from "B".
+//Instantiate class "C" and call its members as well as derived from parent interfaces.
+interface Aa
+{
+	void disp1();
+}
+
+interface B extends Aa
+{
+    void disp2();	
+}
+
+class C implements B
+{
+	public void disp1()
+	{
+		System.out.println("Heloo A");
+	}
+	public void disp2()
+	{
+		System.out.println("Hello B");
+	}
+	public void disp3()
+	{
+		System.out.println("Hello C");
+	}
+}
+
+
+public class THE {
+public static void main(String args[])
+{
+	C c=new C();
+	c.disp1();
+	c.disp2();
+	c.disp3();
+}
+}
