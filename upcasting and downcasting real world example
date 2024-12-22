@@ -1,0 +1,74 @@
+package Aryan;
+import java.util.*;
+class Electronic_Appliance
+{
+	void on()
+	{
+		System.out.println("PArent on");
+	}
+	void off()
+	{
+		System.out.println("Parent off");
+	}
+}
+class TV extends Electronic_Appliance
+{
+	void on()
+	{
+		System.out.println("TV on");
+	}
+	void off()
+	{
+		System.out.println("TV off");
+	}
+}
+
+class Refrigerator extends Electronic_Appliance
+{
+	void on()
+	{
+		System.out.println("Refrigerator on");
+	}
+	void off()
+	{
+		System.out.println("Refrigerator off");
+	}
+}
+class Washing_Machine extends Electronic_Appliance
+{
+	void on()
+	{
+		System.out.println("Washing_Machine on");
+	}
+	void off()
+	{
+		System.out.println("Washing_Machine off");
+	}
+	void fillwater()
+	{
+		System.out.println("Fill water");
+	}
+}
+public class Electronic_Demo1 {
+	public static void perform(Electronic_Appliance e)
+	{
+		e.on();
+		e.off();
+		if(e instanceof Washing_Machine)
+		{
+			Washing_Machine w=(Washing_Machine) e;
+			w.fillwater();
+		}
+	}
+public static void main(String args[])
+{
+	Washing_Machine wm=new Washing_Machine();
+	perform(wm);
+	System.out.println();
+	Refrigerator r=new Refrigerator();
+	perform(r);
+	System.out.println();
+	TV t=new TV();
+	perform(t);
+}
+}
