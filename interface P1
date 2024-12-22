@@ -39,5 +39,30 @@ public static void main(String args[])
 	c.disp1();
 	c.disp2();
 	c.disp3();
+	//upcasting
+	System.out.println();
+	Aa a=new C();
+	a.disp1();
+	B b=new C();
+	b.disp1();
+	b.disp2();
+	
+	System.out.println();
+	//downcasting
+	if(a instanceof C)
+	{
+		C ch=(C) a;
+		ch.disp1();
+		ch.disp2();
+		ch.disp3();
+	}
+	System.out.println();
+	if(b instanceof C)
+	{
+		C cc=(C)b;
+		cc.disp1();
+		cc.disp2();
+		cc.disp3();
+	}
 }
 }
