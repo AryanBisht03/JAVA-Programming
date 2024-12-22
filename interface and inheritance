@@ -1,0 +1,66 @@
+//Create an interface named `Vehicle` with an abstract method `drive()`. 
+//Implement this interface in three classes: `Car`, `Bike`, and `Truck`, each providing its 
+//own implementation of the `drive()` method.  
+//
+//Now define a class `Transport` with:  
+//1. A static method `operate()` that accepts a reference of type `Vehicle` as a parameter 
+//and invokes the `drive()` method on the passed object.  
+//2. A `main()` method to create objects of `Car`, `
+//Bike`, and `Truck` and call the `operate()` method for each.
+
+
+package Aryan;
+import java.util.*;
+
+interface Vehicle
+{
+	void drive();
+}
+
+class Car implements Vehicle
+{
+	@Override
+	public void drive()
+	{
+		System.out.println("CAR");
+	}
+}
+
+class Bike implements Vehicle
+{
+	@Override
+	public void drive()
+	{
+		System.out.println("Bike");
+	}
+}
+
+class Truck implements Vehicle
+{
+	@Override
+	public void drive()
+	{
+		System.out.println("TRUCK");
+	}
+}
+
+
+public class ASD {
+	static void operate(Vehicle v)
+	{
+		v.drive();
+	}
+public static void main(String args[])
+{
+	Car c=new Car();
+	Bike b=new Bike();
+	Truck t=new Truck();
+	c.drive();
+	b.drive();
+	t.drive();
+	operate(c);
+	operate(b);
+	operate(t);
+	
+}
+}
