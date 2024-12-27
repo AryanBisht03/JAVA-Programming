@@ -1,0 +1,78 @@
+package Aryan;
+import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+public class IIII {
+public static void main(String args[])
+{
+	System.out.println("Hy this is arraylist");
+	// the insertion and retreival operation on Array_list
+	ArrayList<Integer> arr=new ArrayList<>();
+	arr.add(1);
+	arr.add(2);
+	arr.add(3);
+	arr.add(4);
+	arr.add(5);
+	arr.add(6);
+	arr.add(7);
+	arr.add(8);
+	//retrival
+	for(int i=0;i<arr.size();i++)
+	{
+		System.out.print(arr.get(i)+" ");
+	}
+	
+	
+	
+	//removing an element using index and you can also remove them with the value but the value should be string.
+	arr.remove(0);
+	arr.remove(1);
+	arr.remove(2);
+	System.out.println();
+	//remaining elements
+	for(int i=0;i<arr.size();i++)
+	{
+		System.out.print(arr.get(i)+" ");
+	}
+	
+	//checking if the list is empty
+	if(arr.isEmpty())
+	{
+		System.out.println("The list is empty");
+	}
+	else
+	{
+		System.out.println("The list is not empty");
+	}
+	
+	System.out.println();
+	
+	//reverse an array list
+	Collections.reverse(arr);
+	for(int i=0;i<arr.size();i++)
+	{
+		System.out.print(arr.get(i)+" ");
+	}
+	
+	//finding maximum and minimum values
+	int maximum=Collections.max(arr);
+	int minimum=Collections.min(arr);
+	System.out.println();
+	System.out.println(maximum);
+	System.out.println(minimum);
+	
+	
+	//copying arraylist
+	ArrayList<Integer> arr2=new ArrayList<>(arr);
+	for(int i=0;i<arr.size();i++)
+	{
+		System.out.print(arr.get(i)+" ");
+	}
+	System.out.println();
+	for(int i=0;i<arr.size();i++)
+	{
+		System.out.print(arr2.get(i)+" ");
+	}
+	
+}
+}
