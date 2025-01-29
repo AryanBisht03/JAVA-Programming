@@ -1,0 +1,55 @@
+package aryan;
+import java.util.*;
+
+
+class Weapons
+{
+	void attack()
+	{
+		
+	}
+}
+
+class Sword extends Weapons
+{
+	void attack()
+	{
+		System.out.println("Attack with sword");
+	}
+}
+
+class Gun extends Weapons
+{
+	void attack()
+	{
+		System.out.println("Attack with gun");
+	}
+	void bullets()
+	{
+		System.out.println("Attack with bullets");
+	}
+}
+
+class Hammer extends Weapons
+{
+	void attack()
+	{
+		System.out.println("Attack with hammer");
+	}
+}
+
+public class Wepons {
+public static void main(String[] args) {
+    Weapons swo=new Sword();
+    swo.attack();
+    Weapons gun=new Gun();
+    gun.attack();
+    if(gun instanceof Gun)
+    {
+    	Gun g=(Gun)gun;
+    	g.bullets();
+    }
+    Weapons hammer=new Hammer();
+    hammer.attack();
+}
+}
