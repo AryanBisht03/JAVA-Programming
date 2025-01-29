@@ -1,0 +1,67 @@
+package aryan;
+import java.util.*;
+
+class elec
+{
+	public void run();
+	public void stop();
+}
+
+class Washing_machine extends elec
+{
+	public void run()
+	{
+		System.out.println("Washing machine is running");
+	}
+	public void stop()
+	{
+		System.out.println("washing machine is stopped");
+	}
+	public void fillwater()
+	{
+		System.out.println("filling water in washing machine");
+	}
+}
+
+class Refrigirator extends elec
+{
+	public void run()
+	{
+		System.out.println("Refrigirator  is running");
+	}
+	public void stop()
+	{
+		System.out.println("Refrigirator  is stopped");
+	}
+}
+
+class Cooler extends elec
+{
+	public void run()
+	{
+		System.out.println("cooler is running");
+	}
+	public void stop()
+	{
+		System.out.println("cooler is stopped");
+	}
+}
+
+public class Eclec {
+public static void main(String[] args) {
+	elec ref=new Refrigirator();
+	elec coo=new Cooler();
+    elec wash=new Washing_machine();
+    wash.run();
+    wash.stop();
+    if(wash instanceof Washing_machine)
+    {
+    	Washing_machine w=(Washing_machine)wash;
+    	w.fillwater();
+    }
+    ref.run();
+    ref.stop();
+    coo.run();
+    coo.stop();
+}
+}
