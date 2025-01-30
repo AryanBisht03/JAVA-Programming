@@ -1,0 +1,12 @@
+package aryan;
+import java.util.HashSet;
+public class hashset {
+public static void main(String[] args) {
+	HashSet<Integer> number=new HashSet<>();
+	number.add(12);
+	number.add(23);
+	System.out.println(number);
+	number.remove(12);
+	System.out.println(number);
+}
+}
