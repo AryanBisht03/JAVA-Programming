@@ -1,0 +1,15 @@
+package aryan;
+import java.util.ArrayList;
+
+public class ArrayListExp {
+public static void main(String[] args) {
+ArrayList<String> names=new ArrayList<>();
+names.add("Aryan");
+names.add("Bisht");
+names.add("Pooja");
+names.add("Nayak");
+System.out.println(names);
+names.remove("Aryan");
+System.out.println(names);
+}
+}
