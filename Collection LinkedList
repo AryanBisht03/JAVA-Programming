@@ -1,0 +1,15 @@
+package aryan;
+import java.util.LinkedList;
+public class LinkedListWa {
+public static void main(String[] args) {
+	LinkedList<String> names=new LinkedList<>();
+	names.addFirst("Aryan");
+	names.add("poonam");
+	names.add("lisa");
+	names.addLast("poopi");
+	System.out.println(names);
+	names.removeLast();
+	names.removeFirst();
+	System.out.println(names);
+}
+}
