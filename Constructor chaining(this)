@@ -1,0 +1,51 @@
+package Aryan;
+import java.util.*;
+class BankAccount
+{
+	public String accountNumber;
+	public String name;
+	public double balance;
+	public String accountType;
+	BankAccount()
+	{
+		this("0","unknown",0,"savings");
+	}
+	BankAccount(String accountNumber)
+	{
+		this("12331234234","unknown",0,"savings");
+	}
+	BankAccount(String accountNumber,String name)
+	{
+		this("12331234234","Aryan",0,"savings");
+	}
+	BankAccount(String accountNumber,String name,double balance,String accountType)
+	{
+		this.accountNumber=accountNumber;
+		this.name=name;
+		this.balance=balance;
+		this.accountType=accountType;
+	}
+	public void display()
+	{
+		System.out.println(this.accountNumber);
+		System.out.println(this.name);
+		System.out.println(this.balance);
+		System.out.println(this.accountType);
+	}
+}
+public class Constructors {
+public static void main(String[] args) {
+	Scanner scanner=new Scanner(System.in);
+	BankAccount b1=new BankAccount();
+	BankAccount b2=new BankAccount("1212121");
+	BankAccount b3=new BankAccount("1212121121","Aryan");
+	BankAccount b4=new BankAccount("1212121212121","Aryan",2000000,"savings");
+	b1.display();
+	System.out.println();
+	b2.display();
+	System.out.println();
+	b3.display();
+	System.out.println();
+	b4.display();
+}
+}
