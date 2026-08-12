@@ -1,0 +1,112 @@
+package Aryan;
+import java.util.*;
+class BankAccount
+{
+	String accountNumber;
+	String holderName;
+	double balance;
+	
+	public BankAccount()
+	{
+		this("unknown","unknown",0);
+		System.out.println("BankAccount default constructor");
+	}
+	
+	public BankAccount(String accountNumber)
+	{
+		this(accountNumber,"unknown",0);
+		System.out.println("BankAccount parameterized 1 constructor");
+	}
+	
+	public BankAccount(String accountNumber,String holderName)
+	{
+		this(accountNumber,holderName,0);
+		System.out.println("BankAccount parameterized 2 constructor");
+	}
+	
+	public BankAccount(String accountNumber,String holderName,double balance)
+	{
+		this.accountNumber=accountNumber;
+		this.holderName=holderName;
+		this.balance=balance;
+		System.out.println("BankAccount parameterized 3 constructor");
+
+	}
+	
+	
+}
+
+class SavingAccount extends BankAccount
+{
+	double interestRate;
+    public SavingAccount()
+    {
+    	super();
+    	System.out.println("Saving account default cons");
+    }
+    public SavingAccount(String accountNumber)
+    {
+    	super(accountNumber);
+    	System.out.println("saving account parameterized 1 cons");
+    }
+    public SavingAccount(String accountNumber,String holderName)
+    {
+    	super(accountNumber,holderName);
+    	System.out.println("saving account parameterized 2 cons");
+    }
+    public SavingAccount(String accountNumber,String holderName,double balance)
+    {
+    	super(accountNumber,holderName,balance);
+    	System.out.println("saving account parameterized 3 cons");
+    }
+    public SavingAccount(String accountNumber,String holderName,double balance,double interestRate)
+    {
+    	super(accountNumber,holderName,balance);
+    	this.interestRate=interestRate;
+    	System.out.println("saving account parameterized 4 cons");
+    } 
+}
+
+class CurrentAccount extends BankAccount
+{
+	double overdraftLimit;
+	public CurrentAccount()
+	{
+		super();
+	}
+	public CurrentAccount(String accountNumber)
+    {
+		super(accountNumber);
+    }
+    public CurrentAccount(String accountNumber,String holderName)
+    {
+    	super(accountNumber,holderName);
+    }
+    public CurrentAccount(String accountNumber,String holderName,double balance)
+    {
+    	super(accountNumber,holderName,balance);
+    }
+    public CurrentAccount(String accountNumber,String holderName,double balance,double overdraftLimit)
+    {
+    	super(accountNumber,holderName,balance);
+    	this.overdraftLimit=overdraftLimit;
+    } 
+}
+
+public class Accounts {
+public static void main(String[] args) {
+//	BankAccount b1=new BankAccount();
+//	BankAccount b2=new BankAccount("121212121212");
+//	BankAccount b3=new BankAccount("121212121212","Aryan");
+//	BankAccount b4=new BankAccount("121212121212","Aryan",21034920);
+//	SavingAccount b1=new SavingAccount();
+//	SavingAccount b2=new SavingAccount("121212121212");
+//	SavingAccount b3=new SavingAccount("121212121212","Aryan");
+//	SavingAccount b4=new SavingAccount("121212121212","Aryan",21034920);
+	CurrentAccount b1=new CurrentAccount();
+	CurrentAccount b2=new CurrentAccount("121212121212");
+	CurrentAccount b3=new CurrentAccount("121212121212","Aryan");
+	CurrentAccount b4=new CurrentAccount("121212121212","Aryan",21034920);
+	
+}
+}
