@@ -1,0 +1,119 @@
+package Aryan;
+import java.util.*;
+
+class BankAccount{
+	String accountNumber;
+	String holderName;
+	double balance;
+	String bankName;
+	static int accountCount;
+	BankAccount(String accountNumber,String holderName,double balance,String bankName)
+	{
+		this.accountNumber=accountNumber;
+		this.holderName=holderName;
+		this.balance=balance;
+		this.bankName=bankName; 
+	}
+	public void deposit(double amount)
+	{
+		if(amount>0)
+		{
+			balance=balance+amount;
+		}
+		else
+		{
+			System.out.println("Not a valid amount");
+		}
+	}
+	public void withdraw(double amount)
+	{
+		if(amount>balance || amount<0)
+		{
+			System.out.println("Not a valid amount or amount is greater than balance");
+		}
+		else
+		{
+			balance=balance-amount;
+		}
+	}
+	public void displayAccountDetails()
+	{
+		System.out.println("Account Number : "+accountNumber);
+		System.out.println("Holder Name : "+holderName);
+		System.out.println("Balance : "+balance);
+		System.out.println("Bank Name : "+bankName);
+	}
+	
+}
+
+class SavingAccount extends BankAccount
+{
+	double interestRate;
+	double minimumBalance;
+	SavingAccount(String accountNumber,String holderName,double balance,String bankName,double interestRate,double minimumBalance)
+	{
+		super(accountNumber,holderName,balance,bankName);
+		this.interestRate=interestRate;
+		this.minimumBalance=minimumBalance;
+	}
+	
+}
+
+class CurrentAccount extends BankAccount
+{
+	double OverDraftLimit;
+	public CurrentAccount(String accountNumber,String holderName,double balance,String bankName,double OverDraftLimit) {
+		super(accountNumber,holderName,balance,bankName);
+		this.OverDraftLimit=OverDraftLimit;
+	}
+	@Override
+	public void withdraw(double amount)
+	{
+		double maxbal=super.balance+OverDraftLimit;
+		if(amount<=maxbal && amount>0)
+		{
+			super.balance=super.balance-amount;
+		}
+		else
+		{
+			System.out.println("Amount is greater than over limit");
+		}
+	}
+}
+
+class SalaryAccount extends BankAccount
+{
+	String companyname;
+	double salary;
+	public SalaryAccount(String accountNumber,String holderName,double balance,String bankName,String companyname,double salary)
+	{
+	  super(accountNumber,holderName,balance,bankName);
+	  this.companyname=companyname;
+	  this.salary=salary;
+	}
+//	@Override
+//	public void withdraw(double amount)
+//	{
+//		if(amount>0)
+//		{
+//			super.balance=super.balance-amount;
+//		}
+//		else
+//		{
+//			System.out.println("not a valid amount");
+//		}
+//	}
+	public void displayAccountDetails()
+	{
+		super.displayAccountDetails();
+		System.out.println(companyname);
+		System.out.println(salary);
+	}
+}
+
+public class Inheritance {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	
+}
+}
