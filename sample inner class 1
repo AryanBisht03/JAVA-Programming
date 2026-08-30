@@ -1,0 +1,70 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Student
+{
+    private String name;
+    private int roll_no;
+    public Student()
+    {
+        this("unknown");
+    }
+    public Student(String name)
+    {
+        this(name,0);
+    }
+    public Student(String name,int roll_no)
+    {
+        this.name=name;
+        this.roll_no=roll_no;
+    }
+    
+    
+    //inner class
+    class Address
+    {
+        
+        private String city;
+        private String state;
+        public Address()
+        {
+            this("unknown");
+        }
+        public Address(String city)
+        {
+            this(city,"unknown");
+        }
+        public Address(String city,String state)
+        {
+            this.city=city;
+            this.state=state;
+        }
+        
+        public void displayDetails()
+        {
+            System.out.println("Name : "+name);
+            System.out.println("Roll No : "+roll_no);
+        }
+        public void displayAddress()
+        {
+            System.out.println("State : "+state);
+            System.out.println("City : "+city);
+        }
+    }
+}
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner scanner =new Scanner(System.in);
+		Student s1=new Student("Aryan",12);
+		Student.Address a1=s1.new Address("Uttrakhand","Roorkee");
+		a1.displayDetails();
+		a1.displayAddress();
+		
+
+	}
+}
