@@ -1,0 +1,607 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Person
+{
+   private String name;
+   private int age;
+   private String mobileno;
+   private String city;
+   
+   public Person()
+   {
+       this("unknown");
+   }
+   public Person(String name)
+   {
+       this(name,0);
+   }
+   public Person(String name,int age)
+   {
+       this(name,age,"unknown");
+   }
+   public Person(String name,int age,String mobileno)
+   {
+       this(name,age,mobileno,"unknown");
+   }
+   public Person(String name,int age,String mobileno,String city)
+   {
+       this.name=name;
+       this.age=age;
+       this.mobileno=mobileno;
+       this.city=city;
+   }
+   
+   public void setname(String name)
+   {
+       this.name=name;
+   }
+   public void setage(int age)
+   {
+       this.age=age;
+   }
+   
+   public void setmobileno(String mobileno)
+   {
+       this.mobileno=mobileno;
+   }
+   public void setcity(String city)
+   {
+       this.city=city;
+   }
+   public String getname()
+   {
+       return name;
+   }
+   public int getage()
+   {
+       return age;
+   }
+   
+   public String getmobileno()
+   {
+       return mobileno;
+   }
+   public String getcity()
+   {
+       return city;
+   }
+   
+   public void displayDetails()
+   {
+       System.out.println("Name : "+name);
+       System.out.println("Age : "+age);
+       System.out.println("Mobile No. : "+mobileno);
+       System.out.println("City : "+city);
+   }
+}
+
+class Employee extends Person
+{
+    private int empId;
+    private String department;
+    private double salary;
+    private int joiningYear;
+    public Employee()
+    {
+        this(0);
+    }
+    public Employee(int empId)
+    {
+        this(empId,"unknown");
+    }
+    public Employee(int empId,String department)
+    {
+        this(empId,department,0);
+    }
+    public Employee(int empId,String department,double salary)
+    {
+        this(empId,department,salary,0);
+    }
+    public Employee(int empId,String department,double salary,int joiningYear)
+    {
+        this.empId=empId;
+        this.department=department;
+        this.salary=salary;
+        this.joiningYear=joiningYear;
+    }
+    
+    public Employee(String name,int age,String mobileno,String city,int empId,String department,double salary,int joiningYear)
+    {
+        super(name,age,mobileno,city);
+        this.empId=empId;
+        this.department=department;
+        this.salary=salary;
+        this.joiningYear=joiningYear;
+    }
+    
+    @Override
+    public void displayDetails()
+    {
+        super.displayDetails();
+        System.out.println("Employee Id : "+empId);
+        System.out.println("Department : "+department);
+        System.out.println("Salary : "+salary);
+        System.out.println("Joining Year :"+joiningYear);
+    }
+    
+    public void setempId(int empId)
+    {
+        this.empId=empId;
+    }
+    public void setdepartment(String department)
+    {
+        this.department=department;
+    }
+    public void setsalary(double salary)
+    {
+        this.salary=salary;
+    }
+    public void setjoiningYear(int joiningYear)
+    {
+        this.joiningYear=joiningYear;
+    }
+    public int getempId()
+    {
+        return empId;
+    }
+    public String getdepartment()
+    {
+        return department;
+    }
+    public double getsalary()
+    {
+        return salary;
+    }
+    public int getjoiningYear()
+    {
+        return joiningYear;
+    }
+}
+
+class Developer extends Employee
+{
+    private String programmingLangage;
+    private int projectsCompleted;
+    private String githubUserName;
+    private int remote;
+    
+    public Developer()
+    {
+       this("unknown"); 
+    }
+    public Developer(String programmingLangage)
+    {
+        this(programmingLangage,0);
+    }
+    public Developer(String programmingLangage,int projectsCompleted)
+    {
+        this(programmingLangage,projectsCompleted,"unknown");
+    }
+    public Developer(String programmingLangage,int projectsCompleted,String githubUserName)
+    {
+        this(programmingLangage,projectsCompleted,githubUserName,0);
+    }
+    public Developer(String programmingLangage,int projectsCompleted,String githubUserName,int remote)
+    {
+        this.programmingLangage=programmingLangage;
+        this.projectsCompleted=projectsCompleted;
+        this.githubUserName=githubUserName;
+        this.remote=remote;
+    }
+    
+    public Developer(String name,int age,String mobileno,String city,int empId,String department,double salary,int joiningYear,String programmingLangage,int projectsCompleted,String githubUserName,int remote)
+    {
+        super(name,age,mobileno,city,empId,department,salary,joiningYear);
+        this.programmingLangage=programmingLangage;
+        this.projectsCompleted=projectsCompleted;
+        this.githubUserName=githubUserName;
+        this.remote=remote;
+    }
+    
+    public void displayDetails()
+    {
+        super.displayDetails();
+        System.out.println("Programming Language : "+programmingLangage);
+        System.out.println("Projects Completed : "+projectsCompleted);
+        System.out.println("Github UserName : "+githubUserName);
+        System.out.println("Remote : "+remote);
+    }
+    
+    public void setprogrammingLangage(String programmingLangage)
+    {
+        this.programmingLangage=programmingLangage;
+    }
+    public void setprojectsCompleted(int projectsCompleted)
+    {
+        this.projectsCompleted=projectsCompleted;
+    }
+    public void setgithubUserName(String githubUserName)
+    {
+        this.githubUserName=githubUserName;
+    }
+    public void setremote(int remote)
+    {
+        this.remote=remote;
+    }
+    public String getprogrammingLangage()
+    {
+        return programmingLangage;
+    }
+    public int getprojectsCompleted()
+    {
+        return projectsCompleted;
+    }
+    public String getgithubUserName()
+    {
+        return githubUserName;
+    }
+    public int getremote()
+    {
+        return remote;
+    }
+}
+
+class SeniorDeveloper extends Developer
+{
+    private int teamsize;
+    private int leadershipYears;
+    private int managedProjects;
+    private double annualBonus;
+    
+    public SeniorDeveloper()
+    {
+        this(0);
+    }
+    public SeniorDeveloper(int teamsize)
+    {
+        this(teamsize,0);
+    }
+    public SeniorDeveloper(int teamsize,int leadershipYears)
+    {
+        this(teamsize,leadershipYears,0);
+    }
+    public SeniorDeveloper(int teamsize,int leadershipYears,int managedProjects)
+    {
+        this(teamsize,leadershipYears,managedProjects,0);
+    }
+    public SeniorDeveloper(int teamsize,int leadershipYears,int managedProjects,double annualBonus)
+    {
+        this.teamsize=teamsize;
+        this.leadershipYears=leadershipYears;
+        this.managedProjects=managedProjects;
+        this.annualBonus=annualBonus;
+    }
+    public SeniorDeveloper(String name,int age,String mobileno,String city,int empId,String department,double salary,int joiningYear,String programmingLangage,int projectsCompleted,String githubUserName,int remote,int teamsize,int leadershipYears,int managedProjects,double annualBonus)
+    {
+        super(name,age,mobileno,city,empId,department,salary,joiningYear,programmingLangage,projectsCompleted,githubUserName,remote);
+        this.teamsize=teamsize;
+        this.leadershipYears=leadershipYears;
+        this.managedProjects=managedProjects;
+        this.annualBonus=annualBonus;
+    }
+    
+    public void setteamsize(int teamsize)
+    {
+        this.teamsize=teamsize;
+    }
+    public void setleadershipYears(int leadershipYears)
+    {
+        this.leadershipYears=leadershipYears;
+    }
+    public void setmanagedProjects(int managedProjects)
+    {
+        this.managedProjects=managedProjects;
+    }
+    public void setannualBonus(double annualBonus)
+    {
+        this.annualBonus=annualBonus;
+    }
+    public int getteamsize()
+    {
+        return teamsize;
+    }
+    public int getleadershipYears()
+    {
+        return leadershipYears;
+    }
+    public int getmanagedProjects()
+    {
+        return managedProjects;
+    }
+    public double getannualBonus()
+    {
+        return annualBonus;
+    }
+    
+    @Override
+    public void displayDetails()
+    {
+        super.displayDetails();
+        System.out.println("Team Size : "+teamsize);
+        System.out.println("Leadership Years : "+leadershipYears);
+        System.out.println("Managed Projects : "+managedProjects);
+        System.out.println("Annual Bonus : "+annualBonus);
+    }
+}
+
+class TeamLead extends SeniorDeveloper
+{
+    private int architectureExperience;
+    private int teamsManaged;
+    private int criticalProjects;
+    private int stockOptions;
+    
+    public TeamLead()
+    {
+        this(0);
+    }
+    public TeamLead(int architectureExperience)
+    {
+        this(architectureExperience,0);
+    }
+    public TeamLead(int architectureExperience,int teamsManaged)
+    {
+        this(architectureExperience,teamsManaged,0);
+    }
+    public TeamLead(int architectureExperience,int teamsManaged,int criticalProjects)
+    {
+        this(architectureExperience,teamsManaged,criticalProjects,0);
+    }
+    public TeamLead(int architectureExperience,int teamsManaged,int criticalProjects,int stockOptions)
+    {
+        this.architectureExperience=architectureExperience;
+        this.teamsManaged=teamsManaged;
+        this.criticalProjects=criticalProjects;
+        this.stockOptions=stockOptions;
+    }
+    public TeamLead(String name,int age,String mobileno,String city,int empId,String department,double salary,int joiningYear,String programmingLangage,int projectsCompleted,String githubUserName,int remote,int teamsize,int leadershipYears,int managedProjects,double annualBonus,int architectureExperience,int teamsManaged,int criticalProjects,int stockOptions)
+    {
+        super(name,age,mobileno,city,empId,department,salary,joiningYear,programmingLangage,projectsCompleted,githubUserName,remote,teamsize,leadershipYears,managedProjects,annualBonus);
+        this.architectureExperience=architectureExperience;
+        this.teamsManaged=teamsManaged;
+        this.criticalProjects=criticalProjects;
+        this.stockOptions=stockOptions;
+    }
+    
+    @Override
+    public void displayDetails()
+    {
+        super.displayDetails();
+        System.out.println("Architecture Experience : "+architectureExperience);
+        System.out.println("Teams Managed : "+teamsManaged);
+        System.out.println("Critical Projects : "+criticalProjects);
+        System.out.println("Stock Options : "+stockOptions);
+    }
+    
+}
+
+class Customer extends Person
+{
+    private int CustomerId;
+    private String accountType;
+    private double accountBalance;
+    private int registrationYear;
+    
+    public Customer()
+    {
+        this(0);
+    }
+    public Customer(int CustomerId)
+    {
+        this(CustomerId,"unknown");
+    }
+    public Customer(int CustomerId,String accountType)
+    {
+        this(CustomerId,accountType,0);
+    }
+    public Customer(int CustomerId,String accountType,double accountBalance)
+    {
+        this(CustomerId,accountType,accountBalance,0);
+    }
+    
+    public Customer(int CustomerId,String accountType,double accountBalance,int registrationYear)
+    {
+        this.CustomerId=CustomerId;
+        this.accountType=accountType;
+        this.accountBalance=accountBalance;
+        this.registrationYear=registrationYear;
+        // this("unknown",0,"unknown","unknown",CustomerId,accountType,accountBalance,registrationYear);
+    }
+    
+    public Customer(String name,int age,String mobileno,String city,int CustomerId,String accountType,double accountBalance,int registrationYear)
+    {
+        super(name,age,mobileno,city);
+        this.CustomerId=CustomerId;
+        this.accountType=accountType;
+        this.accountBalance=accountBalance;
+        this.registrationYear=registrationYear;
+    }
+    
+    public void displayDetails()
+    {
+        super.displayDetails();
+        System.out.println("CustomerId : "+CustomerId);
+        System.out.println("Account Type : "+accountType);
+        System.out.println("Account Balance : "+accountBalance);
+        System.out.println("Registration Year : "+registrationYear);
+    }
+    
+    public void setCustomerId(int CustomerId)
+    {
+        this.CustomerId=CustomerId;
+    }
+    public void setaccountType(String accountType)
+    {
+        this.accountType=accountType;
+    }
+    public void setaccountBalance(double accountBalance)
+    {
+        this.accountBalance=accountBalance;
+    }
+    public void setregistrationYear(int registrationYear)
+    {
+        this.registrationYear=registrationYear;
+    }
+    public int getCustomerId()
+    {
+        return CustomerId;
+    }
+    public String getaccountType()
+    {
+        return accountType;
+    }
+    public double getaccountBalance()
+    {
+        return accountBalance;
+    }
+    public int getregistrationYear()
+    {
+        return registrationYear;
+    }
+}
+
+class PremiumCustomer extends Customer
+{
+    int membershipLevel;
+    double rewardPoints;
+    double discountPercentage;
+    int premimumSince;
+    
+    public PremiumCustomer()
+    {
+        this(0);
+    }
+    public PremiumCustomer(int membershipLevel)
+    {
+        this(membershipLevel,0);
+    }
+    public PremiumCustomer(int membershipLevel,double rewardPoints)
+    {
+        this(membershipLevel,rewardPoints,0);
+    }
+    public PremiumCustomer(int membershipLevel,double rewardPoints,double discountPercentage)
+    {
+        this(membershipLevel,rewardPoints,discountPercentage,0);
+    }
+    public PremiumCustomer(int membershipLevel,double rewardPoints,double discountPercentage,int premimumSince)
+    {
+        this.membershipLevel=membershipLevel;
+        this.rewardPoints=rewardPoints;
+        this.discountPercentage=discountPercentage;
+        this.premimumSince=premimumSince;
+    }
+    public PremiumCustomer(String name,int age,String mobileno,String city,int CustomerId,String accountType,double accountBalance,int registrationYear,int membershipLevel,double rewardPoints,double discountPercentage,int premimumSince)
+    {
+        super(name,age,mobileno,city,CustomerId,accountType,accountBalance,registrationYear);
+        this.membershipLevel=membershipLevel;
+        this.rewardPoints=rewardPoints;
+        this.discountPercentage=discountPercentage;
+        this.premimumSince=premimumSince;
+    }
+    
+    public void displayDetails()
+    {
+        super.displayDetails();
+        System.out.println("Membership Level : "+membershipLevel);
+        System.out.println("Reward Points"+rewardPoints);
+        System.out.println("Discount Percentage"+discountPercentage);
+        System.out.println("premimum Since"+premimumSince);
+        
+          int membershipLevel;
+    double rewardPoints;
+    double discountPercentage;
+    int premimumSince;
+    }
+}
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// ahhhhhh shit here we go again
+        Scanner scanner=new Scanner(System.in);
+        // Person p1=new Person("Aryan",24,"8006011029","Mumbai");
+        // Person p1=new Person(); // default constructor
+        // p1.displayDetails();
+        // Person p1=new Person("Aryan");
+        // Person p1=new Person("Aryan",24);
+        // Person p1=new Person("Aryan",24,"8006011029");
+        // Person p1=new Person("Aryan",24,"8006011029","Mumbai");
+        // p1.displayDetails();
+        
+        // Customer c1=new Customer();
+        // Customer c1=new Customer(12);
+        // Customer c1=new Customer(12,"savings");
+        // Customer c1=new Customer(12,"savings",123212.332);
+        // Customer c1=new Customer(12,"savings",123212.332,2024);
+        // Person c1=new Customer("Aryan",24,"8006011029","Mumbai",12,"savings",123212.332,2024);
+        // c1.displayDetails();
+        
+        // PremiumCustomer pc1=new PremiumCustomer();
+        // PremiumCustomer pc1=new PremiumCustomer(12);
+        // PremiumCustomer pc1=new PremiumCustomer(12,12.31);
+        // PremiumCustomer pc1=new PremiumCustomer(12,12.23,22);
+        // PremiumCustomer pc1=new PremiumCustomer(12,23,34,45);
+        // PremiumCustomer pc1=new PremiumCustomer("Aryan",24,"8006011029","Mumbai",12,"wer",45.56,45,12,23,34,45);
+        // pc1.displayDetails();
+        
+        Person e1=new Employee();
+        Person e2=new Employee(1234);
+        Person e3=new Employee(1234,"IT");
+        Person e4=new Employee(1234,"IT",200000);
+        Person e5=new Employee(1234,"IT",200000,2025);
+        Person e6=new Employee("Aryan",24,"8006011029","Mumbai",1234,"IT",200000,2025);
+        
+        
+        Person d1=new Developer();
+        Person d2=new Developer("Java");
+        Person d3=new Developer("Java",123);
+        Person d4=new Developer("Java",123,"Arycoder0311");
+        Person d5=new Developer("Java",123,"Arycoder0311",1);
+        Person d6=new Developer("Aryan",24,"8006011029","Mumbai",1234,"IT",200000,2025,"Java",123,"Arycoder0311",1);
+        
+        
+        Person sd1=new SeniorDeveloper();
+        Person sd2=new SeniorDeveloper(4);
+        Person sd3=new SeniorDeveloper(4,1);
+        Person sd4=new SeniorDeveloper(4,1,3);
+        Person sd5=new SeniorDeveloper(4,1,3,345.56);
+        Person sd6=new SeniorDeveloper("Aryan",24,"8006011029","Mumbai",1234,"IT",200000,2025,"Java",123,"Arycoder0311",1,4,1,3,345.56);
+        
+        
+        Person tl1=new TeamLead();
+        Person tl2=new TeamLead(1);
+        Person tl3=new TeamLead(1,2);
+        Person tl4=new TeamLead(1,2,4);
+        Person tl5=new TeamLead(1,2,4,5);
+        Person tl6=new TeamLead("Aryan",24,"8006011029","Mumbai",1234,"IT",200000,2025,"Java",123,"Arycoder0311",1,4,1,3,345.56,1,2,4,5);
+        
+        
+        e1.displayDetails();
+        e2.displayDetails();
+        e3.displayDetails();
+        e4.displayDetails();
+        e5.displayDetails();
+        e6.displayDetails();
+        d1.displayDetails();
+        d2.displayDetails();
+        d3.displayDetails();
+        d4.displayDetails();
+        d5.displayDetails();
+        d6.displayDetails();
+        sd1.displayDetails();
+        sd2.displayDetails();
+        sd3.displayDetails();
+        sd4.displayDetails();
+        sd5.displayDetails();
+        sd6.displayDetails();
+        tl1.displayDetails();
+        tl2.displayDetails();
+        tl3.displayDetails();
+        tl4.displayDetails();
+        tl5.displayDetails();
+        tl6.displayDetails();
+        
+	}
+}
