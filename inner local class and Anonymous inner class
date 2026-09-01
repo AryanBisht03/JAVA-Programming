@@ -1,0 +1,88 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Student 
+{
+    public void showStudents()
+    {
+        class Helper
+        {
+            public void display()
+            {
+                System.out.println("Student Details : Aryannnnnnnn prince prince prince");
+            }
+            
+        }
+        Helper h=new Helper();
+        h.display();
+    }
+}
+
+class Bank
+{
+    private double balance=500000;
+    public void checkbalance()
+    {
+        class Balancechecker
+        {
+            public void check()
+            {
+                System.out.println("Balance "+ balance);
+            }
+        }
+        Balancechecker b=new Balancechecker();
+        b.check();
+    }
+}
+
+class Calculator
+{
+    public void calculate(int a,int b)
+    {
+        class Operation
+        {
+            public void add()
+            {
+                int addd=a+b;
+                System.out.println("Addition is "+addd);
+            }
+            public void multiply()
+            {
+                int mul=a*b;
+                System.out.println("Multiplication is "+mul);
+            }
+        }
+        Operation o=new Operation();
+        o.add();
+        o.multiply();
+    }
+}
+
+
+interface Animal
+{
+    public void sound();
+}
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+        //   Student s=new Student();
+        //   s.showStudents();
+        //   Bank b=new Bank();
+        //   b.checkbalance();
+        // Calculator c=new Calculator();
+        // c.calculate(12,12);
+        Animal a=new Animal()
+        {
+            @Override
+            public void sound()
+            {
+                System.out.println("This animal maeks sound so weird");
+            }
+        };
+        a.sound();
+	}
+}
