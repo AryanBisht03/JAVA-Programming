@@ -1,0 +1,110 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+
+class University
+{
+    static String universityName="GEHU";
+    static String location="Dehradun";
+    public University()
+    {
+     this("unknown");   
+    }
+    public University(String universityName)
+    {
+        this(universityName,"unknown");
+    }
+    public University(String universityName,String location)
+    {
+        this.universityName=universityName;
+        this.location=location;
+    }
+    static class Department
+    {
+        String DepartmentName;
+        String hodName;
+        public Department()
+        {
+          this("unknown");  
+        }
+        public Department(String DepartmentName)
+        {
+            this(DepartmentName,"unknown");
+        } 
+        public Department(String DepartmentName,String hodName)
+        {
+            this.DepartmentName=DepartmentName;
+            this.hodName=hodName;
+        }
+        
+        public void displayDepartment()
+        {
+            System.out.println("University Name : "+universityName);
+            System.out.println("Location : "+location);
+            System.out.println("Department Name : "+DepartmentName);
+            System.out.println("Hod Name : "+hodName);
+        }
+    }
+}
+
+class Bank
+{
+    String bankName;
+    String bankCode;
+    static String Country="India";
+    public Bank()
+    {
+        this("unknown");
+    }
+    public Bank(String bankName)
+    {
+        this(bankName,"unknown");
+    }
+    public Bank(String bankName,String bankCode)
+    {
+        this.bankName=bankName;
+        this.bankCode=bankCode;
+    }
+    static class BankDetails
+    {
+        int totalBrances;
+        int totalEmployees;
+        public BankDetails()
+        {
+            this(0);
+        }
+        public BankDetails(int totalBrances)
+        {
+            this(totalBrances,0);
+        }
+        public BankDetails(int totalBrances,int totalEmployees)
+        {
+            this.totalBrances=totalBrances;
+            this.totalEmployees=totalEmployees;
+        }
+        
+        public void displayDetails()
+        {
+            // comment out isliye kiya kyuki bank name and bank code ko Bankdetails access nahi kar sakti, kyuki woh instance variables hai uske not statuc variables and class bank details static class hai.
+            // System.out.println("Bank Name : "+bankName);
+            // System.out.println("Bank Code : "=bankCode);
+            System.out.println("Total Branches : "+totalBrances);
+            System.out.println("Total Employees : "+totalEmployees);
+            System.out.println("Country : "+Country);
+        }
+    }
+}
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+        Scanner scanner=new Scanner(System.in);
+        // University.Department d1=new University.Department("Computer Science and Engineering","Aryan Bisht");
+        // d1.displayDepartment();
+        Bank.BankDetails b=new Bank.BankDetails(12,23);
+        b.displayDetails();
+	}
+}
