@@ -1,0 +1,93 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Address implements Cloneable
+{
+    String city;
+    String state;
+    public Address(String city,String state)
+    {
+        this.city=city;
+        this.state=state;
+    }
+    public void displayAddress()
+    {
+        System.out.println("City : "+city);
+        System.out.println("State : "+state);
+    }
+    protected Address clone() throws CloneNotSupportedException
+    {
+        return (Address) super.clone();
+    }
+}
+
+class Salary implements Cloneable
+{
+    double basic;
+    double bonus;
+    public Salary(double basic,double bonus)
+    {
+        this.basic=basic;
+        this.bonus=bonus;
+    }
+    public double getTotalSalary()
+    {
+        return (basic+bonus);
+    }
+    public void displaySalary()
+    {
+        System.out.println(getTotalSalary());
+    }
+    protected Salary clone() throws CloneNotSupportedException
+    {
+        return (Salary) super.clone();
+    }
+}
+
+class Employee
+{
+    int id;
+    String name;
+    Address address;
+    Salary salary;
+    ArrayList<String> skills;
+    public Employee(int id,String name, Address address, Salary salary, ArrayList<String> skills)
+    {
+        this.id=id;
+        this.name=name;
+        this.address=address;
+        this.salary=salary;
+        this.skills=new ArrayList<>();
+    }
+    public void displayEmployee()
+    {
+        System.out.println(id);
+        System.out.println(name);
+        address.displayAddress();
+        salary.displaySalary();
+        System.out.println(skills);
+    }
+    public void addSkill(String skill)
+    {
+        skills.add(skill);
+    }
+    protected Employee clone() throws CloneNotSupportedException
+    {
+        Employee e=(Employee) super.clone();
+        e.address=address.clone();
+        e.salary=salary.clone();
+        e.skills=new ArrayList<>(skills);
+        return e;
+    }
+    
+}
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+        Scanner scanner=new Scanner(System.in);
+        
+	}
+}
