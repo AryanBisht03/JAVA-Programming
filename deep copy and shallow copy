@@ -1,0 +1,76 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+// shallow copy
+
+class Address implements Cloneable
+{
+    String city;
+    public Address()
+    {
+        this("unknown");
+    }
+    public Address(String city)
+    {
+        this.city=city;
+    }
+    public void displayCity()
+    {
+        System.out.println("City : "+city);
+    }
+    
+    public Address clone() throws CloneNotSupportedException
+    {
+        return (Address) super.clone();
+    }
+}
+
+class Student implements Cloneable
+{
+    String name;
+    Address address;
+    public Student()
+    {
+     this("unknown");    
+    }
+    public Student(String name)
+    {
+        this.name=name;
+    }
+    public Student(String name, Address address)
+    {
+        this.name=name;
+        this.address=address;
+    }
+    
+    public Student clone() throws CloneNotSupportedException
+    {
+        Student copy=(Student) super.clone();
+        copy.address=address.clone();
+        return copy;
+    }
+}
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner scanner =new Scanner(System.in);
+		Address a=new Address("Mumbai");
+		Student s1=new Student("Aryan",a);
+		Student s2=s1.clone();
+		System.out.println(s1.address==s2.address);
+		s1.name="pink";
+		s2.name="red";
+		s1.address.city="Rajasthan";
+		s2.address.city="Bnagladesh";
+		System.out.println(s1.name);
+		System.out.println(s2.name);
+		System.out.println(s1.address.city);
+		System.out.println(s2.address.city);
+		
+
+	}
+}
